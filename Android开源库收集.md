@@ -77,6 +77,8 @@
 ### 图片浏览 ###
 - ***photoview*** 图片手势放缩  [https://github.com/chrisbanes/PhotoView](https://github.com/chrisbanes/PhotoView)
 
+### SwitchButton ###
+- ***SwitchButton*** 灵活定义样式的开关按钮，比如类似ios的样式         [https://github.com/kyleduo/SwitchButton](https://github.com/kyleduo/SwitchButton)
 
 ## rx系列 ★ ##
 

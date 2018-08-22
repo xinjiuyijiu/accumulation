@@ -80,6 +80,21 @@
 ### SwitchButton ###
 - ***SwitchButton*** 灵活定义样式的开关按钮，比如类似ios的样式         [https://github.com/kyleduo/SwitchButton](https://github.com/kyleduo/SwitchButton)
 
+### shimmer ###
+  facebook实现控件闪光效果
+
+### network-connection-class ###
+  facebook监听网络质量
+
+### Rebound  ###
+  facebook实现各种弹性效果
+
+### Lottie ###
+  通过加载json文件（美工通过adobe设计动画生成的文件），实现跨平台的动画；
+
+### hover ###
+  google的floating库
+
 ## rx系列 ★ ##
 
 - ***rxjava2***  [https://github.com/ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)

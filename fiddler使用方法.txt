@@ -1,0 +1,12 @@
+1.request host 替换
+
+  方式1：fiddler左下角添加 urlreplace test.fmbican.com  www.fmbican.com；
+
+
+2.模拟低速网络
+
+
+3.打开fiddler但是不代理抓包
+
+ 方式1： f12 打开或关闭 Capture Traffic
+ 方式2： 左下角capturing或则点击取消

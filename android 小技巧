@@ -1,5 +1,5 @@
-alignParentRightIfMissing
+alignParentRightIfMissing：  在relativelayout中，如果某个子view所依赖的view被remove或者gone，使用该属性会相对父控件，保持合理的位置；
 
-quantity 
+quantity ：遇到复数的表述，并因为数量问题产生描述差异，比如：1book  2books，使用该属性可以避免定义多个string资源并分别引用的问题；
 
-xliff:g 
+xliff:g ：如果在xml中定义的字符串资源，某些文本不需要翻译，使用该标签指明即可；

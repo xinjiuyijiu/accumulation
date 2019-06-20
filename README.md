@@ -6,6 +6,6 @@
 
 [技术文章收集](./技术文章收集.md)
 
-[java字节码](./JavaByteCode.java)
+[java字节码](./JVMByteCode.java)
 
 

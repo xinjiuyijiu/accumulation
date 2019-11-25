@@ -1,0 +1,3 @@
+Android降级安装的问题  shell安装：
+targetsdk低于Android23,可以随意覆盖，高于该版本，如果普通应用安装，无法成功，提示INSTALL_FAILED_PERMISSION_MODEL_DOWNGRADE，
+如果系统应用通过-d命令可能安装成功，但太低比如低于23会失败。

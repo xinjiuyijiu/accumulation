@@ -1,12 +1,1 @@
-1.request host Ìæ»»
-
-  ·½Ê½1£ºfiddler×óÏÂ½ÇÌí¼Ó urlreplace test.fmbican.com  www.fmbican.com£»
-
-
-2.Ä£ÄâµÍËÙÍøÂç
-
-
-3.´ò¿ªfiddlerµ«ÊÇ²»´úÀí×¥°ü
-
- ·½Ê½1£º f12 ´ò¿ª»ò¹Ø±Õ Capture Traffic
- ·½Ê½2£º ×óÏÂ½Çcapturing»òÔòµã»÷È¡Ïû
+<attachment contenteditable="false" data-atts="%5B%5D" data-aid=".atts-6e32b69a-9e04-42db-b308-6a694780282d"></attachment><p>1.request host ï¿½æ»» ï¿½ï¿½Ê½1ï¿½ï¿½fiddlerï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½ urlreplace test.fmbican.com www.fmbican.comï¿½ï¿½ 2.Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3.ï¿½ï¿½fiddlerï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½×¥ï¿½ï¿½ ï¿½ï¿½Ê½1ï¿½ï¿½ f12 ï¿½ò¿ª»ï¿½Ø±ï¿½ Capture Traffic ï¿½ï¿½Ê½2ï¿½ï¿½ ï¿½ï¿½ï¿½Â½ï¿½capturingï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½</p><p><br></p>

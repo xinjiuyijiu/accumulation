@@ -657,7 +657,6 @@ static final int MIN_TREEIFY_CAPACITY = 64;
 在上述查找树节点的过程中，遇到hash冲突，但key不相等的node，尝试使用comparable接口比较，如果没有实现该接口，则无法直接判断继续遍历左子树或者右子树，只能都遍历一次，使得效率大大降低；
 
 **put的数据key为null，value为null？**
-== 卡卡地方撒 ==
 ```
    static final int hash(Object key) {
         int h;

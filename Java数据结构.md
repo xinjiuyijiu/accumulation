@@ -66,8 +66,11 @@ System.arraycopy(a, 0, elementData, index, numNew);
 
 ***实现了RandomAccess接口？***
 ***和Vector比较？***
+
 Vector是个比较早的线程安全的List集合，也是使用数组实现，但是对读写等操作方法添加了synchronized关键字，实现了方法同步，因此在不需要线程同步的情况时，效率偏低，并且其中某些代码逻辑相比ArrayList不够优秀，比如序列化；
+
 ***CopyOnWriteArrayList和Collections.synchronizedList(list)线程同步？***
+
 Collections.synchronizedList(list)，SynchronizeList其实就是一个包装类，对List的读写等方法添加了同步代码块锁。
 CopyOnWriteArrayList是J.U.C下的一个工具类，逻辑类似ArrayList，只是对写操作添加了复制和锁的操作。
 

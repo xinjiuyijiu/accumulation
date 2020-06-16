@@ -1,7 +1,4 @@
-[TOC]
-
-
-# ArrayList
+#ArrayList
 **实际上使用数组实现进行存储和操作**
 ```
  transient Object[] elementData;
@@ -66,11 +63,8 @@ System.arraycopy(a, 0, elementData, index, numNew);
 
 ***实现了RandomAccess接口？***
 ***和Vector比较？***
-
 Vector是个比较早的线程安全的List集合，也是使用数组实现，但是对读写等操作方法添加了synchronized关键字，实现了方法同步，因此在不需要线程同步的情况时，效率偏低，并且其中某些代码逻辑相比ArrayList不够优秀，比如序列化；
-
 ***CopyOnWriteArrayList和Collections.synchronizedList(list)线程同步？***
-
 Collections.synchronizedList(list)，SynchronizeList其实就是一个包装类，对List的读写等方法添加了同步代码块锁。
 CopyOnWriteArrayList是J.U.C下的一个工具类，逻辑类似ArrayList，只是对写操作添加了复制和锁的操作。
 
@@ -141,7 +135,7 @@ ArrayList在get指定元素时，可以通过数组下标直接获取，而Linke
     }
 ```
 LinkedList在插入和删除元素时，只需要增加或删除节点，进行相应的断链操作；
-# HashMap
+#HashMap
 数组+链表组成的散列表数据结构。
 ```
  transient Node<K,V>[] table;
@@ -534,7 +528,6 @@ static final int MIN_TREEIFY_CAPACITY = 64;
         }
 ```
 **remove节点**
-
 前面的put数据到HashMap中，可能因为增加节点，导致复杂的变化：
 1. 会发生resize扩容操作，从而导致每个bucket节点的移动，进一步导致每个bucket发生treeify和untreeify的操作；
 2. 没有发生resize操作，直接放入bucket的链表中，可能会发生treeify的操作；
@@ -669,7 +662,103 @@ static final int MIN_TREEIFY_CAPACITY = 64;
 ```
 key为空时，其hash值为0，则必定放入第0个bucket，并且整个HashMap中仅有一个key为null的节点；
 
+#LinkedHashMap
+在HashMap的基础上，通过双向链表链接所有的key-value节点，从而能够按照一定顺序遍历节点；
+```
+    static class LinkedHashMapEntry<K,V> extends HashMap.Node<K,V> {
+        LinkedHashMapEntry<K,V> before, after;
+        LinkedHashMapEntry(int hash, K key, V value, Node<K,V> next) {
+            super(hash, key, value, next);
+        }
+    }
+    /**
+     * The head (eldest) of the doubly linked list.
+     */
+    transient LinkedHashMapEntry<K,V> head;
 
-# LinkedHashMap
-# TreeMap
-# SortMap
+    /**
+     * The tail (youngest) of the doubly linked list.
+     */
+    transient LinkedHashMapEntry<K,V> tail;
+
+```
+LinkedHashMap的节点在HashMap的节点基础上，添加了before，after引用，以及head和tail成员变量用来形成双向链表；
+```
+    void afterNodeAccess(Node<K,V> p) { }
+    void afterNodeInsertion(boolean evict) { }
+    void afterNodeRemoval(Node<K,V> p) { }
+```
+HashMap中定义了三个空实现的方法，分别表示访问检点后，插入节点后，移除节点后的操作，在LinkedHashMap中，会具体实现这些方法，用于控制双向链表的顺序；
+
+```
+    // 节点移除后，双向链表断链重连
+    void afterNodeRemoval(Node<K,V> e) { // unlink
+        LinkedHashMapEntry<K,V> p =
+            (LinkedHashMapEntry<K,V>)e, b = p.before, a = p.after;
+        p.before = p.after = null;
+        if (b == null)
+            head = a;
+        else
+            b.after = a;
+        if (a == null)
+            tail = b;
+        else
+            a.before = b;
+    }
+ 
+    void afterNodeInsertion(boolean evict) { // possibly remove eldest
+        LinkedHashMapEntry<K,V> first;
+         // 节点插入后，根据需要移除老生代的节点，一边在缓存和有大小限制时使用
+        if (evict && (first = head) != null && removeEldestEntry(first)) {
+            K key = first.key;
+            removeNode(hash(key), key, null, false, true);
+        }
+    }
+    // 某个节点被访问后，如果是按访问数据设置的双向链表，那么该节点会被移动到尾端
+    void afterNodeAccess(Node<K,V> e) { // move node to last
+        LinkedHashMapEntry<K,V> last;
+        if (accessOrder && (last = tail) != e) {
+            LinkedHashMapEntry<K,V> p =
+                (LinkedHashMapEntry<K,V>)e, b = p.before, a = p.after;
+            p.after = null;
+            if (b == null)
+                head = a;
+            else
+                b.after = a;
+            if (a != null)
+                a.before = b;
+            else
+                last = b;
+            if (last == null)
+                head = p;
+            else {
+                p.before = last;
+                last.after = p;
+            }
+            tail = p;
+            ++modCount;
+        }
+    }
+
+```
+```
+   // 在新增节点时，会将节点插入到双向链表尾端
+    private void linkNodeLast(LinkedHashMapEntry<K,V> p) {
+        LinkedHashMapEntry<K,V> last = tail;
+        tail = p;
+        if (last == null)
+            head = p;
+        else {
+            p.before = last;
+            last.after = p;
+        }
+    }
+```
+LinkedHashMap正是通过重写HashMap的一些方法，使得在节点操作后，控制双向链表中节点位置，从而实现有序遍历的功能；
+
+```
+  final boolean accessOrder;
+```
+accessOrder控制双向链表的顺序，true表示根据访问顺序控制双向链表，被访问的节点会被移动到双向链表尾部；false表示根据插入顺序控制双向链表，数据插入后，方向不变.正是因为这样的特性，可以使用LinkedHashMap实现类似LRUCache的功能.
+#TreeMap
+#SortMap

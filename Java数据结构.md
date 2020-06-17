@@ -760,5 +760,269 @@ LinkedHashMap正是通过重写HashMap的一些方法，使得在节点操作后
   final boolean accessOrder;
 ```
 accessOrder控制双向链表的顺序，true表示根据访问顺序控制双向链表，被访问的节点会被移动到双向链表尾部；false表示根据插入顺序控制双向链表，数据插入后，方向不变.正是因为这样的特性，可以使用LinkedHashMap实现类似LRUCache的功能.
+
 #TreeMap
-#SortMap
+
+通过红黑树实现存储key-value数据，每个树节点通过key进行比较排序；是一个二叉查找树，也是一个黑平衡二叉树；通过中序遍历能将所有节点有序遍历出；
+
+```
+    static final class TreeMapEntry<K,V> implements Map.Entry<K,V> {
+        K key;
+        V value;
+        TreeMapEntry<K,V> left;
+        TreeMapEntry<K,V> right;
+        TreeMapEntry<K,V> parent;
+        boolean color = BLACK;
+        ....
+```
+可以看出TreeMap的每个节点包含了左右子节点，父节点的引用，key，value，以及红黑树颜色.
+
+```
+   public V put(K key, V value) {
+        TreeMapEntry<K,V> t = root;
+        // 如果根节点为空，创建根节点
+        if (t == null) {
+            compare(key, key); // type (and possibly null) check
+
+            root = new TreeMapEntry<>(key, value, null);
+            size = 1;
+            modCount++;
+            return null;
+        }
+        int cmp;
+        TreeMapEntry<K,V> parent;
+        // split comparator and comparable paths
+        Comparator<? super K> cpr = comparator;
+        // 如果存在比较器，使用比较器比较key
+        if (cpr != null) {
+            do {
+                parent = t;
+                cmp = cpr.compare(key, t.key);
+                // 继续遍历左子树
+                if (cmp < 0)
+                    t = t.left;
+                // 继续遍历右子树
+                else if (cmp > 0)
+                    t = t.right;
+                else
+                // 如果key比较结果相等，替换成新的value，并返回
+                    return t.setValue(value);
+            // 一直遍历到叶子结点
+            } while (t != null);
+        }
+        else {
+            // 常规的key比较，key不能为空
+            if (key == null)
+                throw new NullPointerException();
+            @SuppressWarnings("unchecked")
+                // key必须实现Comparable接口
+                Comparable<? super K> k = (Comparable<? super K>) key;
+             // 通过key的comparable接口比较值判断大小，遍历并找到叶子结点位置
+            do {
+                parent = t;
+                cmp = k.compareTo(t.key);
+                if (cmp < 0)
+                    t = t.left;
+                else if (cmp > 0)
+                    t = t.right;
+                else
+                    return t.setValue(value);
+            } while (t != null);
+        }
+        // 创建树节点，传入parent节点
+        TreeMapEntry<K,V> e = new TreeMapEntry<>(key, value, parent);
+        // 设置节点在父节点的哪个分支
+        if (cmp < 0)
+            parent.left = e;
+        else
+            parent.right = e;
+        // 红黑树插入后的自平衡操作
+        fixAfterInsertion(e);
+        size++;
+        modCount++;
+        return null;
+    }
+```
+从上面的节点插入操作可知，当TreeMap没有传入Comparable比较器时，需要key实现自己的比较器，使得节点可以比较，从而形成分叉结构；
+```
+    // 这里的CLR指的是Introduction_to_Algorithms这本书的几名作者的缩写，这里的红黑树自平衡逻辑，
+    // 基本上来自该书籍
+    /** From CLR */
+    private void fixAfterInsertion(TreeMapEntry<K,V> x) {
+        x.color = RED;
+
+        while (x != null && x != root && x.parent.color == RED) {
+            if (parentOf(x) == leftOf(parentOf(parentOf(x)))) {
+                TreeMapEntry<K,V> y = rightOf(parentOf(parentOf(x)));
+                if (colorOf(y) == RED) {
+                    setColor(parentOf(x), BLACK);
+                    setColor(y, BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
+                    x = parentOf(parentOf(x));
+                } else {
+                    if (x == rightOf(parentOf(x))) {
+                        x = parentOf(x);
+                        rotateLeft(x);
+                    }
+                    setColor(parentOf(x), BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
+                    rotateRight(parentOf(parentOf(x)));
+                }
+            } else {
+                TreeMapEntry<K,V> y = leftOf(parentOf(parentOf(x)));
+                if (colorOf(y) == RED) {
+                    setColor(parentOf(x), BLACK);
+                    setColor(y, BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
+                    x = parentOf(parentOf(x));
+                } else {
+                    if (x == leftOf(parentOf(x))) {
+                        x = parentOf(x);
+                        rotateRight(x);
+                    }
+                    setColor(parentOf(x), BLACK);
+                    setColor(parentOf(parentOf(x)), RED);
+                    rotateLeft(parentOf(parentOf(x)));
+                }
+            }
+        }
+        root.color = BLACK;
+    }
+```
+
+```
+    private void deleteEntry(TreeMapEntry<K,V> p) {
+        modCount++;
+        size--;
+
+        // If strictly internal, copy successor's element to p and then make p
+        // point to successor.
+        if (p.left != null && p.right != null) {
+            TreeMapEntry<K,V> s = successor(p);
+            p.key = s.key;
+            p.value = s.value;
+            p = s;
+        } // p has 2 children
+
+        // Start fixup at replacement node, if it exists.
+        TreeMapEntry<K,V> replacement = (p.left != null ? p.left : p.right);
+
+        if (replacement != null) {
+            // Link replacement to parent
+            replacement.parent = p.parent;
+            if (p.parent == null)
+                root = replacement;
+            else if (p == p.parent.left)
+                p.parent.left  = replacement;
+            else
+                p.parent.right = replacement;
+
+            // Null out links so they are OK to use by fixAfterDeletion.
+            p.left = p.right = p.parent = null;
+
+            // Fix replacement
+            if (p.color == BLACK)
+                fixAfterDeletion(replacement);
+        } else if (p.parent == null) { // return if we are the only node.
+            root = null;
+        } else { //  No children. Use self as phantom replacement and unlink.
+            if (p.color == BLACK)
+                fixAfterDeletion(p);
+
+            if (p.parent != null) {
+                if (p == p.parent.left)
+                    p.parent.left = null;
+                else if (p == p.parent.right)
+                    p.parent.right = null;
+                p.parent = null;
+            }
+        }
+    }
+```
+```
+    /** From CLR */
+    private void fixAfterDeletion(TreeMapEntry<K,V> x) {
+        while (x != root && colorOf(x) == BLACK) {
+            if (x == leftOf(parentOf(x))) {
+                TreeMapEntry<K,V> sib = rightOf(parentOf(x));
+
+                if (colorOf(sib) == RED) {
+                    setColor(sib, BLACK);
+                    setColor(parentOf(x), RED);
+                    rotateLeft(parentOf(x));
+                    sib = rightOf(parentOf(x));
+                }
+
+                if (colorOf(leftOf(sib))  == BLACK &&
+                    colorOf(rightOf(sib)) == BLACK) {
+                    setColor(sib, RED);
+                    x = parentOf(x);
+                } else {
+                    if (colorOf(rightOf(sib)) == BLACK) {
+                        setColor(leftOf(sib), BLACK);
+                        setColor(sib, RED);
+                        rotateRight(sib);
+                        sib = rightOf(parentOf(x));
+                    }
+                    setColor(sib, colorOf(parentOf(x)));
+                    setColor(parentOf(x), BLACK);
+                    setColor(rightOf(sib), BLACK);
+                    rotateLeft(parentOf(x));
+                    x = root;
+                }
+            } else { // symmetric
+                TreeMapEntry<K,V> sib = leftOf(parentOf(x));
+
+                if (colorOf(sib) == RED) {
+                    setColor(sib, BLACK);
+                    setColor(parentOf(x), RED);
+                    rotateRight(parentOf(x));
+                    sib = leftOf(parentOf(x));
+                }
+
+                if (colorOf(rightOf(sib)) == BLACK &&
+                    colorOf(leftOf(sib)) == BLACK) {
+                    setColor(sib, RED);
+                    x = parentOf(x);
+                } else {
+                    if (colorOf(leftOf(sib)) == BLACK) {
+                        setColor(rightOf(sib), BLACK);
+                        setColor(sib, RED);
+                        rotateLeft(sib);
+                        sib = leftOf(parentOf(x));
+                    }
+                    setColor(sib, colorOf(parentOf(x)));
+                    setColor(parentOf(x), BLACK);
+                    setColor(leftOf(sib), BLACK);
+                    rotateRight(parentOf(x));
+                    x = root;
+                }
+            }
+        }
+
+        setColor(x, BLACK);
+    }
+
+```
+```
+    final TreeMapEntry<K,V> getEntry(Object key) {
+        // Offload comparator-based version for sake of performance
+        if (comparator != null)
+            return getEntryUsingComparator(key);
+        if (key == null)
+            throw new NullPointerException();
+        @SuppressWarnings("unchecked")
+            Comparable<? super K> k = (Comparable<? super K>) key;
+        TreeMapEntry<K,V> p = root;
+        while (p != null) {
+            int cmp = k.compareTo(p.key);
+            if (cmp < 0)
+                p = p.left;
+            else if (cmp > 0)
+                p = p.right;
+            else
+                return p;
+        }
+        return null;
+    }
+```

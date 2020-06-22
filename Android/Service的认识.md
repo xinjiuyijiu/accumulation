@@ -1,10 +1,15 @@
 Service运行在后台，没有用户界面的；
- -  本地服务，即service依附在主进程上（比如service和启动它的activity在同一个进程）；
+- 本地服务，即service依附在主进程上（比如service和启动它的activity在同一个进程）；
 - 远程服务，运行在独立的进程，不受其他进程的影响，方便为其他进程提供服务,android:process=":service" 
      
 **两种service的启动方式：**
 1.  通过startService启动，启动后service不会受启动它的组件的影响，即使组件销毁后，service依然能够存在，需要手动销毁service。
 2. 通过bindService让组件绑定服务。通过提供一个类似客户端-服务器接口，使得组件和服务之间能够进行交互和通信。一个服务可以被多个组件所绑定，如果所有的组件都没有继续绑定该服务，那么它会被销毁。
+
+|column1|column2|
+|-|-|
+|content1|content2|content3|
+
 startService：
 onCreate（只有第一次创建时回调）
 onStartCommand

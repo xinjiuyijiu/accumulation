@@ -264,7 +264,7 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
         if (mHashes == EMPTY_IMMUTABLE_INTS) {
             throw new UnsupportedOperationException("ArrayMap is immutable");
         }
-	// 如果当前容量大小是8，尝试从缓存中拿到
+	// 如果当前容量大小是8，尝试从缓存中拿到旧的mHashes和mArray
         if (size == (BASE_SIZE*2)) {
             synchronized (ArrayMap.class) {
                 if (mTwiceBaseCache != null) {
@@ -294,12 +294,13 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
                 }
             }
         }
-
+	// 如果
         mHashes = new int[size];
         mArray = new Object[size<<1];
     }
 
 ```
+
 ```
  private static void freeArrays(final int[] hashes, final Object[] array, final int size) {
         if (hashes.length == (BASE_SIZE*2)) {

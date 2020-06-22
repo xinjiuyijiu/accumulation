@@ -408,4 +408,4 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
     }
 
 ```
-ArrayMap在
+ArrayMap在移除数据时，考虑到了缩容处理，从而更充分的利用存储空间；

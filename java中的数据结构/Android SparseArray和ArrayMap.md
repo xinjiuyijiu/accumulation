@@ -210,7 +210,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
         return null;
     }
 ```
-ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获取或者key对象的
+ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获取或者key对象的hashCode方法获取，ArrayMap的扩容大小根据
 
 ```
     int indexOf(Object key, int hash) {

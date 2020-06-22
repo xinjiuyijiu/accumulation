@@ -8,7 +8,9 @@ Service运行在后台，没有用户界面的；
 
 |startService启动方式|bindService启动方式|
 |-|-|
-|content1|content2|
+|onCreate（只有第一次创建时回调）|onCreate（只有第一次创建时回调）|
+|onStartCommand||
+|onDestroy（需要通过stopService终止服务）||
 
 startService：
 onCreate（只有第一次创建时回调）

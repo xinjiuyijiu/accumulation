@@ -130,3 +130,4 @@ gc操作，将数组中的无效key-value删除，并通过左移数据，处理
 ```
 
 # ArrayMap
+和SparseArray的设计思路

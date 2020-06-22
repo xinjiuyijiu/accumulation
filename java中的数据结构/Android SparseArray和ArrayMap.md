@@ -373,12 +373,13 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
                 if (CONCURRENT_MODIFICATION_EXCEPTIONS && osize != mSize) {
                     throw new ConcurrentModificationException();
                 }
-		
+		// 将旧数据搬移到新的数组中
                 if (index > 0) {
                     if (DEBUG) Log.d(TAG, "remove: copy from 0-" + index + " to 0");
                     System.arraycopy(ohashes, 0, mHashes, 0, index);
                     System.arraycopy(oarray, 0, mArray, 0, index << 1);
                 }
+		// 如果移除位置在数据之间，需要
                 if (index < nsize) {
                     if (DEBUG) Log.d(TAG, "remove: copy from " + (index+1) + "-" + nsize
                             + " to " + index);

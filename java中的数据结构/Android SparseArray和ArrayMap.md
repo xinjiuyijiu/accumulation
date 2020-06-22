@@ -300,9 +300,10 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
     }
 
 ```
-容积为4,8时使用缓存数据，指的是使用容积为4的存储空间，和容积为8的存储空间，目的是不用重新分配内存空间，至于具体的k-v数据
+容积为4,8时使用缓存数据，指的是使用容积为4的存储空间，和容积为8的存储空间，目的是不用重新分配内存空间，和具体的k-v数据无关；
 ```
  private static void freeArrays(final int[] hashes, final Object[] array, final int size) {
+	// 容积为8时，将mHashes和mArray数组
         if (hashes.length == (BASE_SIZE*2)) {
             synchronized (ArrayMap.class) {
                 if (mTwiceBaseCacheSize < CACHE_SIZE) {

@@ -1,4 +1,4 @@
-#ArrayList
+# ArrayList
 **实际上使用数组实现进行存储和操作**
 ```
  transient Object[] elementData;
@@ -68,7 +68,7 @@ Vector是个比较早的线程安全的List集合，也是使用数组实现，�
 Collections.synchronizedList(list)，SynchronizeList其实就是一个包装类，对List的读写等方法添加了同步代码块锁。
 CopyOnWriteArrayList是J.U.C下的一个工具类，逻辑类似ArrayList，只是对写操作添加了复制和锁的操作。
 
-#LinkedList
+# LinkedList
 链表结构，是一个双向链表；
 实现了Deque接口，所以它同时也是一个双向队列；
 ```
@@ -662,7 +662,7 @@ static final int MIN_TREEIFY_CAPACITY = 64;
 ```
 key为空时，其hash值为0，则必定放入第0个bucket，并且整个HashMap中仅有一个key为null的节点；
 
-#LinkedHashMap
+# LinkedHashMap
 在HashMap的基础上，通过双向链表链接所有的key-value节点，从而能够按照一定顺序遍历节点；
 ```
     static class LinkedHashMapEntry<K,V> extends HashMap.Node<K,V> {
@@ -761,7 +761,7 @@ LinkedHashMap正是通过重写HashMap的一些方法，使得在节点操作后
 ```
 accessOrder控制双向链表的顺序，true表示根据访问顺序控制双向链表，被访问的节点会被移动到双向链表尾部；false表示根据插入顺序控制双向链表，数据插入后，方向不变.正是因为这样的特性，可以使用LinkedHashMap实现类似LRUCache的功能.
 
-#TreeMap
+# TreeMap
 
 通过红黑树实现存储key-value数据，每个树节点通过key进行比较排序；是一个二叉查找树，也是一个黑平衡二叉树；通过中序遍历能将所有节点有序遍历出；
 

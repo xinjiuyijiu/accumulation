@@ -152,7 +152,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             hash = mIdentityHashCode ? System.identityHashCode(key) : key.hashCode();
             index = indexOf(key, hash);
         }
-	// index大于等于0，表示已经存在了对应的k-v，直接修改value的值
+	// index大于等于0，表示已经存在了对应的k-v，直接替换value的值
         if (index >= 0) {
             // index所对应的mArray中value的位置
             index = (index<<1) + 1;
@@ -160,7 +160,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             mArray[index] = value;
             return old;
         }
-
+	// index小于0，
         index = ~index;
         if (osize >= mHashes.length) {
             final int n = osize >= (BASE_SIZE*2) ? (osize+(osize>>1))

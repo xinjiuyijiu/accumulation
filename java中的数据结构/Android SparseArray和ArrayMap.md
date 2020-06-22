@@ -347,13 +347,15 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
             if (DEBUG) Log.d(TAG, "remove: shrink from " + mHashes.length + " to 0");
             final int[] ohashes = mHashes;
             final Object[] oarray = mArray;
-	    
+	    // 数组置为null
             mHashes = EmptyArray.INT;
             mArray = EmptyArray.OBJECT;
+	    // 缓存数组
             freeArrays(ohashes, oarray, osize);
             nsize = 0;
         } else {
             nsize = osize - 1;
+	    // 如果当前
             if (mHashes.length > (BASE_SIZE*2) && mSize < mHashes.length/3) {
                 // Shrunk enough to reduce size of arrays.  We don't allow it to
                 // shrink smaller than (BASE_SIZE*2) to avoid flapping between

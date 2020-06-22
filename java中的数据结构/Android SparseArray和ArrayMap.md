@@ -239,3 +239,76 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
     }
 
 ```
+```
+    private void allocArrays(final int size) {
+        if (mHashes == EMPTY_IMMUTABLE_INTS) {
+            throw new UnsupportedOperationException("ArrayMap is immutable");
+        }
+        if (size == (BASE_SIZE*2)) {
+            synchronized (ArrayMap.class) {
+                if (mTwiceBaseCache != null) {
+                    final Object[] array = mTwiceBaseCache;
+                    mArray = array;
+                    mTwiceBaseCache = (Object[])array[0];
+                    mHashes = (int[])array[1];
+                    array[0] = array[1] = null;
+                    mTwiceBaseCacheSize--;
+                    if (DEBUG) Log.d(TAG, "Retrieving 2x cache " + mHashes
+                            + " now have " + mTwiceBaseCacheSize + " entries");
+                    return;
+                }
+            }
+        } else if (size == BASE_SIZE) {
+            synchronized (ArrayMap.class) {
+                if (mBaseCache != null) {
+                    final Object[] array = mBaseCache;
+                    mArray = array;
+                    mBaseCache = (Object[])array[0];
+                    mHashes = (int[])array[1];
+                    array[0] = array[1] = null;
+                    mBaseCacheSize--;
+                    if (DEBUG) Log.d(TAG, "Retrieving 1x cache " + mHashes
+                            + " now have " + mBaseCacheSize + " entries");
+                    return;
+                }
+            }
+        }
+
+        mHashes = new int[size];
+        mArray = new Object[size<<1];
+    }
+
+```
+```
+ private static void freeArrays(final int[] hashes, final Object[] array, final int size) {
+        if (hashes.length == (BASE_SIZE*2)) {
+            synchronized (ArrayMap.class) {
+                if (mTwiceBaseCacheSize < CACHE_SIZE) {
+                    array[0] = mTwiceBaseCache;
+                    array[1] = hashes;
+                    for (int i=(size<<1)-1; i>=2; i--) {
+                        array[i] = null;
+                    }
+                    mTwiceBaseCache = array;
+                    mTwiceBaseCacheSize++;
+                    if (DEBUG) Log.d(TAG, "Storing 2x cache " + array
+                            + " now have " + mTwiceBaseCacheSize + " entries");
+                }
+            }
+        } else if (hashes.length == BASE_SIZE) {
+            synchronized (ArrayMap.class) {
+                if (mBaseCacheSize < CACHE_SIZE) {
+                    array[0] = mBaseCache;
+                    array[1] = hashes;
+                    for (int i=(size<<1)-1; i>=2; i--) {
+                        array[i] = null;
+                    }
+                    mBaseCache = array;
+                    mBaseCacheSize++;
+                    if (DEBUG) Log.d(TAG, "Storing 1x cache " + array
+                            + " now have " + mBaseCacheSize + " entries");
+                }
+            }
+        }
+    }
+```

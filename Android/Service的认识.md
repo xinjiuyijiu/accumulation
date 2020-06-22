@@ -27,14 +27,17 @@ Service是运行在进程的主线程当中的，和Activity一样，所以耗�
 
 Service的隐式启动：Android5.0以上，不同应用之间服务需要通过隐式启动，同一个应用则两种都可以；
 
-提高Service的存活率：
-1.启动前台服务。
-2.单独进程启用服务。
-3.onStartCommand的返回值，START_STICKY
-4.提高service的优先权
+**提高Service的存活率：**
 
-IntentService：继承自Service的，处理异步操作。
-1.包含了一个子线程，用来处理耗时操作。
-2.处理完耗时操作后，会自动关闭service。
-3.多次启用服务，该服务的子线程会串行的处理这些耗时操作。
+1. 启动前台服务。
+2. 单独进程启用服务。
+3. onStartCommand的返回值，START_STICKY
+4. 提高service的优先权
+
+**IntentService：**
+继承自Service的，处理异步操作。
+1. 包含了一个子线程，用来处理耗时操作。
+2. 处理完耗时操作后，会自动关闭service。
+3. 多次启用服务，该服务的子线程会串行的处理这些耗时操作。
+
 本质其实是：继承Service后，添加了HandlerThread和Handler来处理耗时操作。

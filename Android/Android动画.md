@@ -1,1 +1,11 @@
 
+FrameAnimation：一系列的图片顺序播放产生的动画效果，图片过多是可能造成OOM。
+TweenAnimation：对场景的view进行图像变化（平移，缩放，透明度，旋转）。
+AttributeAnimation：动态改变对象属性产生的动画属性。
+TweenAnimation并未改变view的属性，只是更改了绘制位置。
+
+对于属性动画：ValueAnimator（子类ObjectAnimator），TypeEvaluator（决定了运动轨迹），TimeInterpolator（决定了行进速率），ObjectAnimator通过不断的控制属性值的变化，并不断的自动赋值给属性，每次赋值后都会调用invalidate/postInvalidate方法刷新视图。
+
+ObjectAnimator的使用：
+两个前提条件：1.该属性必须有setXxxx的方法来修改该属性，如果没有传递动画属性的初始值，那么该属性必须有getXxxx的方法，获取初始值。2.该属性值的改变，必须要产生某种特定的影响。
+如果无法满足上面的条件，可以通过1.手动添加get/set方法。2.用一个新的类包装它，从而添加get/set方法。3.使用ValueAnimator监听动画的改变，自己实现属性的变化过程。

@@ -135,4 +135,5 @@ gc操作，将数组中的无效key-value删除，并通过左移数据，处理
     int[] mHashes;
     Object[] mArray;
 ```
-mHashes升序地存储key的hash值；mArray中存储
+mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，对应的存储key和value；
+

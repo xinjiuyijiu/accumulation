@@ -294,13 +294,13 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
                 }
             }
         }
-	// 如果
+	// 如果不符合缓存条件，则直接创建新的mHashes和mArray数组
         mHashes = new int[size];
         mArray = new Object[size<<1];
     }
 
 ```
-
+容积为4,8时使用缓存数据，指的是使用容积
 ```
  private static void freeArrays(final int[] hashes, final Object[] array, final int size) {
         if (hashes.length == (BASE_SIZE*2)) {

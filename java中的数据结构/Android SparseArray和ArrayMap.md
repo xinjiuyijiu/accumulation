@@ -174,17 +174,17 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             final Object[] oarray = mArray;
 	    // 重新初始化mHashes和mArray数组
             allocArrays(n);
-	    // 在这期间，k-v数量
+	    // 在这期间，k-v数量发生变化
             if (CONCURRENT_MODIFICATION_EXCEPTIONS && osize != mSize) {
                 throw new ConcurrentModificationException();
             }
-
+	    // 将数据迁移到新的数组中
             if (mHashes.length > 0) {
                 if (DEBUG) Log.d(TAG, "put: copy 0-" + osize + " to 0");
                 System.arraycopy(ohashes, 0, mHashes, 0, ohashes.length);
                 System.arraycopy(oarray, 0, mArray, 0, oarray.length);
             }
-
+	    // 释放
             freeArrays(ohashes, oarray, osize);
         }
 

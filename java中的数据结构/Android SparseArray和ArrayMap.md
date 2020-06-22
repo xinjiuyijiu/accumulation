@@ -360,19 +360,20 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
                 // Shrunk enough to reduce size of arrays.  We don't allow it to
                 // shrink smaller than (BASE_SIZE*2) to avoid flapping between
                 // that and BASE_SIZE.
-		// 缩容后的容积
+		// 缩容后的容量为8，或者k-v数量的1.5倍
                 final int n = osize > (BASE_SIZE*2) ? (osize + (osize>>1)) : (BASE_SIZE*2);
 
                 if (DEBUG) Log.d(TAG, "remove: shrink from " + mHashes.length + " to " + n);
 
                 final int[] ohashes = mHashes;
                 final Object[] oarray = mArray;
+		// 重新初始化扩容后新的数组
                 allocArrays(n);
 
                 if (CONCURRENT_MODIFICATION_EXCEPTIONS && osize != mSize) {
                     throw new ConcurrentModificationException();
                 }
-
+		
                 if (index > 0) {
                     if (DEBUG) Log.d(TAG, "remove: copy from 0-" + index + " to 0");
                     System.arraycopy(ohashes, 0, mHashes, 0, index);

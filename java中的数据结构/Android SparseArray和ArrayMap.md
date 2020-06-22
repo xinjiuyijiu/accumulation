@@ -131,3 +131,8 @@ gc操作，将数组中的无效key-value删除，并通过左移数据，处理
 
 # ArrayMap
 和SparseArray的核心思想类似，针对HashMap存储k-v，使用
+```
+    int[] mHashes;
+    Object[] mArray;
+```
+mHashes

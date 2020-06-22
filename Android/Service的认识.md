@@ -10,20 +10,11 @@ Service运行在后台，没有用户界面的；
 |-|-|
 |onCreate（只有第一次创建时回调）|onCreate（只有第一次创建时回调）|
 |onStartCommand|onBind （多次调用绑定服务（此时已经绑定），总共只会调用一次）|
+||onRebind|
 |onDestroy（需要通过stopService终止服务）|onUnbind|
 ||onDestory（通过unbindService解绑服务）|
 
-startService：
-onCreate（只有第一次创建时回调）
-onStartCommand
-onDestroy
-（需要通过stopService终止服务）	bindService：
-onCreate（只有第一次创建时回调）
 
-onBind （多次调用绑定服务（此时已经绑定），总共只会调用一次）   onRebind
-onUnbind
-onDestory
-（通过unbindService解绑服务）
 
 客户端（一般指的启动Service的组件），它通过ServiceConnection监听和获取服务端；服务端（指的Service服务），通过创建Binder，Messager，AIDL三种方式实现和客户端的链接。
 服务第一次被绑定时，会调用onBInd创建并传递Binder，后面无论多次绑定，也不会调用onBind方法，因为已经存在了Binder对象，可以直接使用；

@@ -188,7 +188,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             freeArrays(ohashes, oarray, osize);
         }
 	
-	// 如果插入位置在数据之间，
+	// 如果插入位置在数据之间，需要移动数据，将index位置
         if (index < osize) {
             if (DEBUG) Log.d(TAG, "put: move " + index + "-" + (osize-index)
                     + " to " + (index+1));

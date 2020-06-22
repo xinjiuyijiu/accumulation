@@ -145,9 +145,10 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
         // key为null，hash值默认为0，
         if (key == null) {
             hash = 0;
-            // 查找key为null的k-v所在的
+            // 查找key为null的k-v所在的位置
             index = indexOfNull();
         } else {
+	// 获取key的hash值
             hash = mIdentityHashCode ? System.identityHashCode(key) : key.hashCode();
             index = indexOf(key, hash);
         }

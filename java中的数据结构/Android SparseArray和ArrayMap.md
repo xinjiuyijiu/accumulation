@@ -160,7 +160,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             mArray[index] = value;
             return old;
         }
-	// index小于0，
+	// index小于0，表示
         index = ~index;
         if (osize >= mHashes.length) {
             final int n = osize >= (BASE_SIZE*2) ? (osize+(osize>>1))

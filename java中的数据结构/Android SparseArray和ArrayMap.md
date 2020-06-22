@@ -210,7 +210,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
         return null;
     }
 ```
-ArrayMap
+ArrayMap可插入[null,null]的数据，
 
 ```
     int indexOf(Object key, int hash) {

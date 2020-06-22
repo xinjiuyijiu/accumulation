@@ -258,7 +258,7 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
     }
 
 ```
-
+ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最后一个位置
 ```
     private void allocArrays(final int size) {
         if (mHashes == EMPTY_IMMUTABLE_INTS) {

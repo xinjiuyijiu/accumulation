@@ -237,7 +237,8 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
 
         // Search for a matching key after the index.
         int end;
-	// 如果hash相同，key不相等，
+	// 如果hash相同，key不相等，可能存在hash冲突的k-v，通过左右遍历，找到该值
+	// 从index处
         for (end = index + 1; end < N && mHashes[end] == hash; end++) {
             if (key.equals(mArray[end << 1])) return end;
         }

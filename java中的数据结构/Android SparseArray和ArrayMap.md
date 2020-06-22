@@ -184,10 +184,11 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
                 System.arraycopy(ohashes, 0, mHashes, 0, ohashes.length);
                 System.arraycopy(oarray, 0, mArray, 0, oarray.length);
             }
-	    // 释放
+	    // 释放就数组数据
             freeArrays(ohashes, oarray, osize);
         }
-
+	
+	// 如果插入位置在数据之间，
         if (index < osize) {
             if (DEBUG) Log.d(TAG, "put: move " + index + "-" + (osize-index)
                     + " to " + (index+1));

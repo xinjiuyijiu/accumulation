@@ -258,12 +258,13 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
     }
 
 ```
-ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最后一个位置
+ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最后一个位置；
 ```
     private void allocArrays(final int size) {
         if (mHashes == EMPTY_IMMUTABLE_INTS) {
             throw new UnsupportedOperationException("ArrayMap is immutable");
         }
+	// 如果当前容量大小是8，尝试从缓存中拿到
         if (size == (BASE_SIZE*2)) {
             synchronized (ArrayMap.class) {
                 if (mTwiceBaseCache != null) {

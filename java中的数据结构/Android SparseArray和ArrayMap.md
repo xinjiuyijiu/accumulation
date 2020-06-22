@@ -188,7 +188,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             freeArrays(ohashes, oarray, osize);
         }
 	
-	// 如果插入位置在数据之间，需要移动数据，将index位置
+	// 如果插入位置在数据之间，需要移动数据，将index位置留出来
         if (index < osize) {
             if (DEBUG) Log.d(TAG, "put: move " + index + "-" + (osize-index)
                     + " to " + (index+1));
@@ -201,6 +201,8 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
                 throw new ConcurrentModificationException();
             }
         }
+	
+	// 更新index位置处的数据
         mHashes[index] = hash;
         mArray[index<<1] = key;
         mArray[(index<<1)+1] = value;
@@ -208,6 +210,8 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
         return null;
     }
 ```
+
+
 ```
     int indexOf(Object key, int hash) {
         final int N = mSize;

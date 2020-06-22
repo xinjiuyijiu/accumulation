@@ -152,8 +152,9 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             hash = mIdentityHashCode ? System.identityHashCode(key) : key.hashCode();
             index = indexOf(key, hash);
         }
-	// index大于等于0，表示已经存在
+	// index大于等于0，表示已经存在了对应的k-v
         if (index >= 0) {
+            // index所对应的
             index = (index<<1) + 1;
             final V old = (V)mArray[index];
             mArray[index] = value;

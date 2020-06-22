@@ -215,12 +215,13 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
 ```
     int indexOf(Object key, int hash) {
         final int N = mSize;
-	// 
+	// 没有数据，直接插入第0个位置
         // Important fast case: if nothing is in here, nothing to look for.
         if (N == 0) {
             return ~0;
         }
-
+	
+	// 通过二分查找获取位置
         int index = binarySearchHashes(mHashes, N, hash);
 
         // If the hash code wasn't found, then we have no entry for this key.
@@ -229,6 +230,7 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
         }
 
         // If the key at the returned index matches, that's what we want.
+	// 如果存在key
         if (key.equals(mArray[index<<1])) {
             return index;
         }

@@ -164,12 +164,12 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
         index = ~index;
  	// k-v数量大于等于当前容量，需要扩容操作
         if (osize >= mHashes.length) {
-
+	    // 指定扩容后的大小，4，8，或者1.5倍
             final int n = osize >= (BASE_SIZE*2) ? (osize+(osize>>1))
                     : (osize >= BASE_SIZE ? (BASE_SIZE*2) : BASE_SIZE);
 
             if (DEBUG) Log.d(TAG, "put: grow from " + mHashes.length + " to " + n);
-
+	    // 
             final int[] ohashes = mHashes;
             final Object[] oarray = mArray;
             allocArrays(n);

@@ -253,7 +253,7 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
         // new entry for this key should go.  We use the end of the
         // hash chain to reduce the number of array entries that will
         // need to be copied when inserting.
-	// 如果没找到k-v
+	// 如果左右遍历后仍没找到k-v，将新的数据插入到hash值相同的最后一个位置
         return ~end;
     }
 

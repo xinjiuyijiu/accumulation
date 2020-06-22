@@ -15,9 +15,9 @@ Service运行在后台，没有用户界面的；
 ||onDestory（通过unbindService解绑服务）|
 
 **客户端**（一般指的启动Service的组件），它通过ServiceConnection监听和获取服务端；**服务端**（指的Service服务），通过创建**Binder，Messager，AIDL三种方式**实现和客户端的链接。
-服务第一次被绑定时，会调用onBind创建并传递Binder，后面无论多次绑定，也不会调用onBind方法，因为已经存在了Binder对象，可以直接使用；
-客户端（Activity）在绑定服务时，要注意其生命周期的影响，比如onCreate绑定，然后在onDestory解绑，这样该服务会在组件的整个生命周期中存在和运行；onStart绑定，onStop解绑，那么该服务只会在组件对用户可见时运行。
-对于一个服务同时存在startService和bindService两种方式，startService的优先级高于bindService（或者说影响力更强大）：
+- 服务第一次被绑定时，会调用onBind创建并传递Binder，后面无论多次绑定，也不会调用onBind方法，因为已经存在了Binder对象，可以直接使用；
+- 客户端（Activity）在绑定服务时，要注意其**生命周期**的影响，比如onCreate绑定，然后在onDestory解绑，这样该服务会在组件的整个生命周期中存在和运行；onStart绑定，onStop解绑，那么该服务只会在组件对用户可见时运行。
+对于一个服务同时存在startService和bindService两种方式，**startService的优先级高于bindService（或者说影响力更强大）**：
 比如：服务先通过bindService绑定，然后通过startService启动，此时服务会变成startService启动的状态，即使bindService的客户端解绑，也对他没有影响。同理，服务先通过startService启动在通过bindService绑定，仍然时startService状态。
 Service是运行在进程的主线程当中的，和Activity一样，所以耗时操作需要另外开辟子线程处理。
 前台服务，优先级更高，存活时间和几率更高，且会在通知栏下拉框中显示通知，比如音乐播放器一般使用了该方式。只需在onStartCommand时，调用startForeground（true），并设置对应通知栏即可，然后在onDestroy中使用startForegroud（false）关闭它。

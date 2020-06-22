@@ -355,11 +355,12 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
             nsize = 0;
         } else {
             nsize = osize - 1;
-	    // 如果当前
+	    // 如果当前容积大于8，并且数组使用率没达到1/3，需要缩容处理
             if (mHashes.length > (BASE_SIZE*2) && mSize < mHashes.length/3) {
                 // Shrunk enough to reduce size of arrays.  We don't allow it to
                 // shrink smaller than (BASE_SIZE*2) to avoid flapping between
                 // that and BASE_SIZE.
+		// 缩容后的容积
                 final int n = osize > (BASE_SIZE*2) ? (osize + (osize>>1)) : (BASE_SIZE*2);
 
                 if (DEBUG) Log.d(TAG, "remove: shrink from " + mHashes.length + " to " + n);

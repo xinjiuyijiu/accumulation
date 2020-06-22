@@ -221,7 +221,7 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
             return ~0;
         }
 	
-	// 通过二分查找获取位置
+	// 通过二分查找获取hash位置
         int index = binarySearchHashes(mHashes, N, hash);
 
         // If the hash code wasn't found, then we have no entry for this key.
@@ -230,13 +230,14 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
         }
 
         // If the key at the returned index matches, that's what we want.
-	// 如果存在key
+	// 如果存在这个key，表示查找到k-v
         if (key.equals(mArray[index<<1])) {
             return index;
         }
 
         // Search for a matching key after the index.
         int end;
+	// 如果hash相同，key不相等，
         for (end = index + 1; end < N && mHashes[end] == hash; end++) {
             if (key.equals(mArray[end << 1])) return end;
         }

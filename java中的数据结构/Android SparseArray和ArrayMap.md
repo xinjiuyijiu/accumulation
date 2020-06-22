@@ -238,12 +238,13 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
         // Search for a matching key after the index.
         int end;
 	// 如果hash相同，key不相等，可能存在hash冲突的k-v，通过左右遍历，找到该值
-	// 从index处
+	// 从index处向右遍历，尝试找到k-v
         for (end = index + 1; end < N && mHashes[end] == hash; end++) {
             if (key.equals(mArray[end << 1])) return end;
         }
-
+	
         // Search for a matching key before the index.
+	// 从index处向左遍历，尝试找到k-v
         for (int i = index - 1; i >= 0 && mHashes[i] == hash; i--) {
             if (key.equals(mArray[i << 1])) return i;
         }
@@ -252,6 +253,7 @@ ArrayMap可插入[null,null]的数据，key的hash值可通过Object.hashCode获
         // new entry for this key should go.  We use the end of the
         // hash chain to reduce the number of array entries that will
         // need to be copied when inserting.
+	// 如果没找到k-v
         return ~end;
     }
 

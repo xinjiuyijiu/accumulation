@@ -379,7 +379,7 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
                     System.arraycopy(ohashes, 0, mHashes, 0, index);
                     System.arraycopy(oarray, 0, mArray, 0, index << 1);
                 }
-		// 如果移除位置在数据之间，需要
+		// 如果移除位置在数据之间，需要将index后的数据向左移动一位，使得index消失
                 if (index < nsize) {
                     if (DEBUG) Log.d(TAG, "remove: copy from " + (index+1) + "-" + nsize
                             + " to " + index);
@@ -388,6 +388,7 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
                             (nsize - index) << 1);
                 }
             } else {
+		// 不需要缩容，直接处理数据移动
                 if (index < nsize) {
                     if (DEBUG) Log.d(TAG, "remove: move " + (index+1) + "-" + nsize
                             + " to " + index);
@@ -407,3 +408,4 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
     }
 
 ```
+ArrayMap在

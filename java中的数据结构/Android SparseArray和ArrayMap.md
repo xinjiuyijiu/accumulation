@@ -169,11 +169,12 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
                     : (osize >= BASE_SIZE ? (BASE_SIZE*2) : BASE_SIZE);
 
             if (DEBUG) Log.d(TAG, "put: grow from " + mHashes.length + " to " + n);
-	    // 
+	   
             final int[] ohashes = mHashes;
             final Object[] oarray = mArray;
+	    // 重新初始化mHashes和mArray数组
             allocArrays(n);
-
+	    // 在这期间，mHashes数组长度发生拜年话
             if (CONCURRENT_MODIFICATION_EXCEPTIONS && osize != mSize) {
                 throw new ConcurrentModificationException();
             }

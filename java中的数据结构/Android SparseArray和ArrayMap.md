@@ -347,6 +347,7 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
             if (DEBUG) Log.d(TAG, "remove: shrink from " + mHashes.length + " to 0");
             final int[] ohashes = mHashes;
             final Object[] oarray = mArray;
+	    
             mHashes = EmptyArray.INT;
             mArray = EmptyArray.OBJECT;
             freeArrays(ohashes, oarray, osize);

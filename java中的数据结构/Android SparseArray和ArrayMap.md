@@ -160,9 +160,11 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             mArray[index] = value;
             return old;
         }
-	// index小于0，表示
+	// index小于0，表示添加新的k-v
         index = ~index;
+ 	// k-v数量大于等于当前容量，需要扩容操作
         if (osize >= mHashes.length) {
+
             final int n = osize >= (BASE_SIZE*2) ? (osize+(osize>>1))
                     : (osize >= BASE_SIZE ? (BASE_SIZE*2) : BASE_SIZE);
 

@@ -174,7 +174,7 @@ mHashes升序地存储key的hash值；mArray根据key在mHashes中的位置，�
             final Object[] oarray = mArray;
 	    // 重新初始化mHashes和mArray数组
             allocArrays(n);
-	    // 在这期间，mHashes数组长度发生拜年话
+	    // 在这期间，k-v
             if (CONCURRENT_MODIFICATION_EXCEPTIONS && osize != mSize) {
                 throw new ConcurrentModificationException();
             }

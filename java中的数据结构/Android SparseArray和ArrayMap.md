@@ -341,7 +341,7 @@ ArrayMap遇到hash冲突时，会依次将新的数据插入到hash相同的最�
         final Object old = mArray[(index << 1) + 1];
         final int osize = mSize;
         final int nsize;
-	// 如果
+	// 如果移除后为空
         if (osize <= 1) {
             // Now empty.
             if (DEBUG) Log.d(TAG, "remove: shrink from " + mHashes.length + " to 0");

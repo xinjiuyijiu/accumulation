@@ -13,3 +13,5 @@
 
 # Java内存模型
 # Happen-Before六原则
+
+# guan

@@ -57,17 +57,17 @@ volatile的中文意思易变的，不稳定的；该关键字能实现比synchr
 Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义了一些禁止编译优化的场景，保证并发编程的正确性；Happens-Before表示前面一个操作的结构对后续操作是可见的（可获取的）。
 
 1. 程序的顺序性规则
-   在一个线程中，按照程序顺序，前面的操作对后续任意操作可见
+   在一个线程中，按照程序顺序，前面的操作对后续任意操作可见；
 2. volatile变量规则
-   对一个volatile变量的写操作，对后续这个变量的读操作可见
+   对一个volatile变量的写操作，对后续这个变量的读操作可见；
 3. 传递性规则
-   a happens-before b，b happens-before c，那么a happens-before c
+   a happens-before b，b happens-before c，那么a happens-before c；
 4. 管程中的锁规则
-   一个锁的解锁，对于后续的该锁的加锁操作可见
+   一个锁的解锁，对于后续的该锁的加锁操作可见；
 5. 线程start规则
-   线程A启动线程B，线程A启动线程B之前的操作对于线程B是可见的
+   线程A启动线程B，线程A启动线程B之前的操作对于线程B是可见的；
 6. 线程join规则
-   线程A中，B.join
+   线程A中，B.join使得A等待B线程执行完成，完成后，线程B的操作对于线程A是可见的；
 
 # 互斥锁
 # 死锁

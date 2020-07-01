@@ -63,6 +63,7 @@ Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义
 3. 传递性规则
    a happens-before b，b happens-before c，那么a happens-before c
 4. 管程中的锁规则
+   一个锁的解锁，对于后续的该锁的加锁操作可见
 5. 线程start规则
 6. 线程join规则
 

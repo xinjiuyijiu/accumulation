@@ -54,7 +54,7 @@ volatile的中文意思易变的，不稳定的；该关键字能实现比synchr
 - 有序性：volatile保证了，会在变量赋值操作后，加入内存屏障的指令（使得内存屏障后的代码不能移动到它前面），这样该变量不会受到重排序的影响；
 
 ## Happens-Before六原则
-Happens-Before原则会对
+Happens-Before原则
 
 # 互斥锁
 # 死锁

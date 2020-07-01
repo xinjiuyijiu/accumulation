@@ -45,6 +45,8 @@ public class Singleton {
 
 
 ***缓存，线程，编译优化的目的是提高代码执行效率，但缓存带来的可见性问题，线程切换带来的原子性问题，编译优化带来的有序性问题会导致并发问题；***
+***那么也就是说***
+
 
 # Java内存模型
 # Happen-Before六原则
@@ -70,4 +72,4 @@ public class Singleton {
 # CountDownLatch&CyclicBarrier
 
 # Java并发容器
-# 原子类
+# 原子

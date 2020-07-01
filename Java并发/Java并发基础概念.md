@@ -58,7 +58,7 @@ Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义
 
 1. 程序的顺序性规则
 2. volatile变量规则
-   对一个
+   对一个volatile变量的写操作，happens-before后序对这个变量的读操作
 3. 传递性规则
 4. 管程中的锁规则
 5. 线程start规则

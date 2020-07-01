@@ -47,7 +47,10 @@ public class Singleton {
 
 # Java内存模型
 Java内存模型规范了JVM提供按需禁用缓存和编译优化的方法；包括volatile，final，synchronized三个关键字，以及六项Happen-Before规则；
-**volatile**的中文意思易变的，不稳定的，该关键字能实现比synchronized更弱的
+
+## volatile
+volatile的中文意思易变的，不稳定的；该关键字能实现比synchronized更弱的同步机制，能够解决可见性和有序性的问题：
+- 可见性
 
 # Happen-Before六原则
 

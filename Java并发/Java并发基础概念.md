@@ -13,6 +13,31 @@ CPU和内存之间存在CPU缓存，多核CPU，每个线程在不同的核上�
 编译器为了优化性能，会在不修改逻辑的情况下，改变代码执行顺序；
 
 双重检查锁创建单例产生的空指针问题？
+```
+public class Singleton {
+
+  static Singleton instance;
+
+  static Singleton getInstance(){
+
+    if (instance == null) {
+
+      synchronized(Singleton.class) {
+
+        if (instance == null)
+
+          instance = new Singleton();
+
+        }
+
+    }
+
+    return instance;
+
+  }
+
+}
+```
 
 缓存，线程，编译优化的目的是提高代码执行效率，但缓存带来的可见性问题，线程切换带来的原子性问题，编译优化带来的有序性问题会导致并发问题；
 

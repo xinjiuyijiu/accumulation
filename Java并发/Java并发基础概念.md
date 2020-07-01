@@ -71,6 +71,7 @@ Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义
 
 ## synchronized
 
+## final
 
 
 # 互斥锁

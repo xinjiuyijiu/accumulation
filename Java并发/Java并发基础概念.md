@@ -73,7 +73,8 @@ Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义
 
 ## final
 - final域的写重排规则
-- 
+ 
+- final域的读重排规则
 
 # 互斥锁
 # 死锁

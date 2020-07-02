@@ -210,7 +210,7 @@ public class ArrayBlockingQueue<E>...{
 	...
 }
 ```
-上面的代码
+上面的代码是Java实现的阻塞队列，它很好的反映了MESA管程模型，items
 
 # 线程&线程的生命周期
 # 线程池&Future

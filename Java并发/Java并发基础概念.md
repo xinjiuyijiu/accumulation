@@ -142,7 +142,7 @@ Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义
   管程指的是，管理共享变量以及对共享变量的操作过程，让他们支持并发；
   管程和信号量是等价的；
 ## MESA模型
-
+![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/02/mesa_model-1593673888243.png)
 
 
 # 线程&线程的生命周期

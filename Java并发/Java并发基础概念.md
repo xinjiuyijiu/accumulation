@@ -231,7 +231,7 @@ MESA管程的编程范式，当线程进入入口等待队列后，不会立即�
 **notifyAll优于notify?**
 使用notify唤醒指定的线程，可能因为唤醒失败，导致其它线程永远无法唤醒；而使用notifyAll通知所有的线程，尝试唤醒其中一个线程；
 
-synchronized是Java内置的管程方案，能够自动加锁，解锁，但只有一个条件变量；
+synchronized是Java内置的管程方案，能够自动加锁，解锁，但只有一个条件变量，和notify，wait，notifyAll使用，；
 Lock+Condition是Java SDK提供的管程方案，需要手动加锁，解锁，但可以任意设置条件变量，更加灵活;
 
 # 线程&线程的生命周期

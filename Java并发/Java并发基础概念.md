@@ -210,7 +210,7 @@ public class ArrayBlockingQueue<E>...{
 	...
 }
 ```
-上面的代码是Java实现的阻塞队列，它很好的反映了MESA管程模型，items是我们的共享变量，lock是可重入锁，notEmpty和notFull是两个条件变量
+上面的代码是Java实现的阻塞队列，它很好的反映了MESA管程模型，items是我们的共享变量，lock是可重入锁，实现互斥同步，notEmpty和notFull是两个条件变量，用来实现items数组空和满的状态，put和
 
 # 线程&线程的生命周期
 # 线程池&Future

@@ -146,7 +146,42 @@ Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义
 管程中封装了共享变量以及对共享变量的操作，如图的管程MESA模型中，封装了共享变量V，共享变量的操作方法X，Y，以及引入了条件变量和锁；
 ```
 public class ArrayBlockingQueue<E>...{
+    /** The queued items */
+    final Object[] items;
 
+    /** Main lock guarding all access */
+    final ReentrantLock lock;
+
+    /** Condition for waiting takes */
+    private final Condition notEmpty;
+
+    /** Condition for waiting puts */
+    private final Condition notFull;
+
+    public void put(E e) throws InterruptedException {
+        Objects.requireNonNull(e);
+        final ReentrantLock lock = this.lock;
+        lock.lockInterruptibly();
+        try {
+            while (count == items.length)
+                notFull.await();
+            enqueue(e);
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public E take() throws InterruptedException {
+        final ReentrantLock lock = this.lock;
+        lock.lockInterruptibly();
+        try {
+            while (count == 0)
+                notEmpty.await();
+            return dequeue();
+        } finally {
+            lock.unlock();
+        }
+    }
 }
 ```
 

@@ -230,6 +230,8 @@ MESA管程的编程范式，当线程进入入口等待队列后，不会立即�
 
 **notifyAll优于notify**
 
+synchronized是Java内置的管程方案，
+
 # 线程&线程的生命周期
 # 线程池&Future
 

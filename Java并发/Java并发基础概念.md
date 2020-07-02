@@ -143,7 +143,7 @@ Happens-Before原则针对JVM代码编译优化，指令重排的问题，定义
   管程和信号量是等价的；
 ## MESA模型
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/02/mesa_model-1593673888243.png)
-
+管程中封装了共享变量以及对
 
 # 线程&线程的生命周期
 # 线程池&Future

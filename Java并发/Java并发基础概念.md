@@ -230,7 +230,8 @@ MESA管程的编程范式，当线程进入入口等待队列后，不会立即�
 
 **notifyAll优于notify**
 
-synchronized是Java内置的管程方案，
+synchronized是Java内置的管程方案，能够自动加锁，解锁，但只有一个条件变量；
+Lock+Condition是Java SDK提供的管程方案，需要手动加锁，解锁，但可以
 
 # 线程&线程的生命周期
 # 线程池&Future

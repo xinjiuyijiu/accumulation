@@ -166,7 +166,7 @@ public class ArrayBlockingQueue<E>...{
         try {
 	    // 循坏判断队列是否已满
             while (count == items.length)
-		// 如果
+		// 如果队列已满，需要阻塞
                 notFull.await();
             enqueue(e);
         } finally {

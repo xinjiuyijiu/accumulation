@@ -166,10 +166,13 @@ public class ArrayBlockingQueue<E>...{
         try {
 	    // 循坏判断队列是否已满
             while (count == items.length)
-		// 如果队列已满，需要等待notFull条件变量的等待队列，知道
+		// 如果队列已满，需要等待notFull条件变量的等待队列，知道队列有空余位
+		// 置插入
                 notFull.await();
+	    // 队列入队操作
             enqueue(e);
         } finally {
+	    
             lock.unlock();
         }
     }

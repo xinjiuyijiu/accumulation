@@ -196,7 +196,7 @@ public class ArrayBlockingQueue<E>...{
         items[putIndex] = x;
         if (++putIndex == items.length) putIndex = 0;
         count++;
-	// 入队操作成功后，表示队列非空，需要通知非空条件变量的等待队列，可以进入等待队列
+	// 入队操作成功后，表示队列非空，需要通知非空条件变量的等待队列，可以进入入口等//待队列
         notEmpty.signal();
     }
 

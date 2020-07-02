@@ -182,8 +182,35 @@ public class ArrayBlockingQueue<E>...{
             lock.unlock();
         }
     }
+
+    private void enqueue(E x) {
+        // assert lock.getHoldCount() == 1;
+        // assert items[putIndex] == null;
+        final Object[] items = this.items;
+        items[putIndex] = x;
+        if (++putIndex == items.length) putIndex = 0;
+        count++;
+        notEmpty.signal();
+    }
+
+    private E dequeue() {
+        // assert lock.getHoldCount() == 1;
+        // assert items[takeIndex] != null;
+        final Object[] items = this.items;
+        @SuppressWarnings("unchecked")
+        E x = (E) items[takeIndex];
+        items[takeIndex] = null;
+        if (++takeIndex == items.length) takeIndex = 0;
+        count--;
+        if (itrs != null)
+            itrs.elementDequeued();
+        notFull.signal();
+        return x;
+    }
+	...
 }
 ```
+上面的代码
 
 # 线程&线程的生命周期
 # 线程池&Future

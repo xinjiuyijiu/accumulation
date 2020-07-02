@@ -161,10 +161,12 @@ public class ArrayBlockingQueue<E>...{
     public void put(E e) throws InterruptedException {
         Objects.requireNonNull(e);
         final ReentrantLock lock = this.lock;
-	// 锁
+	// 加锁
         lock.lockInterruptibly();
         try {
+	    // 循坏判断队列是否已满
             while (count == items.length)
+		// 如果
                 notFull.await();
             enqueue(e);
         } finally {

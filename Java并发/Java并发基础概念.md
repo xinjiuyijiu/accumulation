@@ -161,6 +161,7 @@ public class ArrayBlockingQueue<E>...{
     public void put(E e) throws InterruptedException {
         Objects.requireNonNull(e);
         final ReentrantLock lock = this.lock;
+	// 锁
         lock.lockInterruptibly();
         try {
             while (count == items.length)
@@ -190,7 +191,7 @@ public class ArrayBlockingQueue<E>...{
         items[putIndex] = x;
         if (++putIndex == items.length) putIndex = 0;
         count++;
-	// 入队操作成功后，表示
+	// 入队操作成功后，表示队列非空，需要通知条件变量非空队列
         notEmpty.signal();
     }
 

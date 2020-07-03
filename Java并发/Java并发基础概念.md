@@ -248,7 +248,10 @@ synchronized管程方案，无法解决死锁问题，而Lock锁，通过破坏�
 可重入锁：线程可以重复的获取同一把锁
 公平锁与非公平锁：等待队列中的线程被唤醒时，公平锁，会按照等待时长，选择排队最久的线程唤醒；非公平锁则不会按照此公平原则唤醒；
 
-## 
+## Semaphore信号量
+![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/03/semaphore_model-1593762056247.png)
+
+
 # 读写锁
 
 # 乐观锁&悲观锁

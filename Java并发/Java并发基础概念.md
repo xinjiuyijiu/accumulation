@@ -239,7 +239,7 @@ Lock+Condition是Java SDK提供的管程方案，需要手动加锁，解锁，�
 # 线程池&Future
 
 # Lock&Condition
-
+java提供的两种管程方案，synchronized，object的notify，notifyAll，
 
 # 读写锁
 

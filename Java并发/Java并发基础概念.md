@@ -250,7 +250,7 @@ synchronized管程方案，无法解决死锁问题，而Lock锁，通过破坏�
 
 ## Semaphore信号量
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/03/semaphore_model-1593762056247.png)
-在信号量模型中，包含了计数器和等待队列，以及对它们的操作方法，类似互斥锁，进入临界区
+在信号量模型中，包含了计数器和等待队列，以及对它们的操作方法，类似互斥锁，进入临界区时，使用down()方法，计数器+1
 
 # 读写锁
 

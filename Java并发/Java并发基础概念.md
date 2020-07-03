@@ -251,7 +251,7 @@ synchronized管程方案，无法解决死锁问题，而Lock锁，通过破坏�
 ## Semaphore信号量
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/03/semaphore_model-1593762056247.png)
 在信号量模型中，包含了计数器和等待队列，以及对它们的操作方法，初始化Semaphore时，会初始化计数器数量，也就是最大并发的线程数量，类似互斥锁，进入临界区时，使用down()方法，计数器减1，离开临界区时，使用up方法，计数器+1，当计数器变为0时，其它的线程无法进入临界区，在等待队列中；
-Semaphore相较于Lock锁，同样实现了互斥的功能，但Semaphore能允许多个线程同时进入临界区，有限流的作用（类似停车场功能）
+Semaphore相较于Lock锁，同样实现了互斥的功能，但Semaphore能允许多个线程同时进入临界区，有限流的作用（类似停车场功能）；
 
 
 # 读写锁

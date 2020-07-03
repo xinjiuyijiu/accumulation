@@ -241,6 +241,9 @@ Lock+Condition是Java SDK提供的管程方案，需要手动加锁，解锁，�
 # Lock&Condition
 java提供的两种管程方案，synchronized，Object的notify，notifyAll，wait以及Lock&Condition，Lock代替了synchronized互斥锁的功能，Condition代替了Object的notify，notifyAll，wait的条件同步功能，作为粒度更细，更灵活的互斥锁方案，Lock解决了并发中互斥的问题，Condition解决了并发中同步的问题；
 synchronized管程方案，无法解决死锁问题，而Lock锁，通过破坏不可抢占条件，则能很好的解决：
+- 支持超时
+- 相应中断操作
+- 非阻塞的获取锁
 
 
 # 读写锁

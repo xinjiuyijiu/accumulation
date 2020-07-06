@@ -271,23 +271,23 @@ class Cache<K,V> {
   V get(K key) {
     V v = null;
     // 读缓存
-    r.lock();         ①
+    r.lock();         
     try {
-      v = m.get(key); ②
+      v = m.get(key); 
     } finally{
-      r.unlock();     ③
+      r.unlock();     
     }
     // 缓存中存在，返回
-    if(v != null) {   ④
+    if(v != null) {   
       return v;
     }  
     // 缓存中不存在，查询数据库
-    w.lock();         ⑤
+    w.lock();         
     try {
       // 再次验证
       // 其他线程可能已经查询过数据库
-      v = m.get(key); ⑥
-      if(v == null){  ⑦
+      v = m.get(key); 
+      if(v == null){  
         // 查询数据库
         v= 省略代码无数
         m.put(key, v);
@@ -295,11 +295,8 @@ class Cache<K,V> {
     } finally{
       w.unlock();
     }
-
     return v; 
-
   }
-
 }
 ```
 

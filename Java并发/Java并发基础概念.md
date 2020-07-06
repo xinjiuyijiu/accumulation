@@ -305,7 +305,7 @@ class Cache<K,V> {
 - 锁的降级：先获取写锁，不释放写锁，然后在获取读锁，这个过程叫做锁的降级；ReadWriteLock支持写锁到读锁的降级；
 
 # StampedLock
-相较于ReadWriteLock，针对读多写少的场景，具有更高的
+相较于ReadWriteLock，针对读多写少的场景，具有更高的效率；包括写锁，悲观读锁和乐观读；写锁，
 ## 乐观锁&悲观锁
 
 # CountDownLatch&CyclicBarrier

@@ -263,6 +263,7 @@ Semaphore相较于Lock锁，同样实现了互斥的功能，但Semaphore能允�
 ## 使用读写锁缓存
 
 ## 读写锁的升级和降级
+- 锁的升级：ReadWrite
 
 # 乐观锁&悲观锁
 

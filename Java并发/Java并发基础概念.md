@@ -311,8 +311,8 @@ class Cache<K,V> {
 ## 乐观锁&悲观锁
 
 # CountDownLatch&CyclicBarrier
-CoutDownLatch能够实现一个线程等待另一组线程完成，比如线程A，B并发执行，在A,B都完成后，继续执行线程C，其中线程C等待A，B都完成的逻辑，可以通过CoutDownLatch完成；
-CyclicBarrier能够实现一组线程相互等待，并具有循环执行的功能，比如一组线程A，B，C并发执行，线程A，B分别完成一次执行逻辑后，线程C收到通知后继续执行，同时，A，B继续下一次执行，如此循环往复
+CoutDownLatch能够实现一个线程等待另一组线程完成，比如线程A，B并发执行，在A,B都完成后，继续执行线程C，其中线程C等待A，B都完成的逻辑；
+CyclicBarrier能够实现一组线程相互等待，并具有循环执行的功能，比如一组线程A，B，C并发执行，线程A，B分别完成一次执行逻辑后，线程C收到通知后继续执行，同时，A，B继续下一次执行，如此循环往复；
 
 
 # Java并发容器

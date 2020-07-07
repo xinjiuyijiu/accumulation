@@ -320,7 +320,7 @@ CyclicBarrier能够实现一组线程相互等待，并具有循环执行的功�
 J.U.C中包含了并发容器类，包括：
 - List
   - CopyOnWriteArrayList
-
+    通过CopyOnWrite的思想，在写操作是，copy副本，写入后，将引用指向该副本
 - Set
   - ConcurrentSkipListSet
   - CopyOnWriteArraySet

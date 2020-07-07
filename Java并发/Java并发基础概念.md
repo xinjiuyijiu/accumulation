@@ -319,21 +319,21 @@ CyclicBarrier能够实现一组线程相互等待，并具有循环执行的功�
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/07/java_sync_collection-1594107855860.png)
 J.U.C中包含了并发容器类，包括：
 - List
-  CopyOnWriteArrayList
+  - CopyOnWriteArrayList
 
 - Set
-  ConcurrentSkipListSet
-  CopyOnWriteArraySet
+  - ConcurrentSkipListSet
+  - CopyOnWriteArraySet
 
 - Map
-  ConcurrentHashMap
-  ConcurrentSkipListMap
+  - ConcurrentHashMap
+  - ConcurrentSkipListMap
 
 - Queue
-  BlockingQueue
-  BlockingDequeue
-  ConcurrentLinkedQueue
-  ConcurrentLinkedDeque
+  - BlockingQueue
+  - BlockingDequeue
+  - ConcurrentLinkedQueue
+  - ConcurrentLinkedDeque
   
 
 # 原子类

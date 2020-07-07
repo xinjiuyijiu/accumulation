@@ -311,7 +311,7 @@ class Cache<K,V> {
 ## 乐观锁&悲观锁
 
 # CountDownLatch&CyclicBarrier
-CoutDownLatch能够实现线程等待，
+CoutDownLatch能够实现线程等待，比如线程A，B并发执行，在A,B都完成后，继续执行线程C，
 
 
 # Java并发容器

@@ -364,6 +364,6 @@ J.U.C中的原子类包括：
 - 引用类型
   - AtomicReference
   - AtomicStampedReference
-  - Atomic
+  - AtomicMarkableReference
 
  

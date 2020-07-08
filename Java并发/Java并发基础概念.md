@@ -367,7 +367,12 @@ J.U.C中的原子类包括：
   - AtomicMarkableReference
  
 - 对象属性更新器
-  - AtomicIntegerField
-- 累加器
+  - AtomicIntegerFieldUpdater
+  - AtomicLongFieldUpdater
+  - AtomicReferenceFieldUpdater
 
+- 累加器
+  - DoubleAccumulater
+  - DouybleAdder
+  - 
  

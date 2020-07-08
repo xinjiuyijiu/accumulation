@@ -331,8 +331,8 @@ J.U.C中包含了并发容器类，包括：
 
 - Queue
   - BlockingQueue  单端阻塞队列
-    - ArrayBlockingQueue
-    - LinkedBlockingQueue
+    - ArrayBlockingQueue  有界
+    - LinkedBlockingQueue 有界
     - SynchronousQueue
     - LinkedTransferQueue
     - PriorityBlockingQueue
@@ -341,9 +341,9 @@ J.U.C中包含了并发容器类，包括：
   - BlockingDeque 双端阻塞队列
     - LinkedBlockingDeque
     
-  - ConcurrentLinkedQueue
+  - ConcurrentLinkedQueue 单端非阻塞队列
   
-  - ConcurrentLinkedDeque
+  - ConcurrentLinkedDeque 双端非阻塞队列
   
 
 # 原子类

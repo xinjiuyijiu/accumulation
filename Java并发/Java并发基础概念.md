@@ -330,7 +330,7 @@ J.U.C中包含了并发容器类，包括：
   - ConcurrentSkipListMap
 
 - Queue
-  - BlockingQueue
+  - BlockingQueue  单端阻塞队列
     - ArrayBlockingQueue
     - LinkedBlockingQueue
     - SynchronousQueue

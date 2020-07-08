@@ -366,6 +366,8 @@ J.U.C中的原子类包括：
   - AtomicStampedReference
   - AtomicMarkableReference
  
-- 
+- 对象属性更新器
+  - AtomicIntegerField
+- 累加器
 
  

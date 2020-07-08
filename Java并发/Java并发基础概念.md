@@ -338,7 +338,7 @@ J.U.C中包含了并发容器类，包括：
     - PriorityBlockingQueue
     - DelayQueue
     
-  - BlockingDeque
+  - BlockingDeque 双端阻塞队列
     - LinkedBlockingDeque
     
   - ConcurrentLinkedQueue

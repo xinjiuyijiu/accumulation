@@ -372,7 +372,8 @@ J.U.C中的原子类包括：
   - AtomicReferenceFieldUpdater
 
 - 累加器
-  - DoubleAccumulater
-  - DouybleAdder
-  - 
+  - DoubleAccumulator
+  - DoubleAdder
+  - LongAccumulator
+  - LongAdder
  

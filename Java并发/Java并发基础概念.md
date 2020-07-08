@@ -350,6 +350,7 @@ J.U.C中包含了并发容器类，包括：
   是一种无锁的解决并发问题的方案，因为不需要加锁，释放锁，所以性能比互斥锁并发方案更高；其原理是CPU为了解决并发问题，提供了CAS指令（Compare And Swap），CAS指令本身具有原子性，利用比较并交换原则，只有当前值和期待值相等时，才将当前值更新为最新值；
  ABA问题：CAS操作时，当前值和期待值相等，但在期间当前值被修改过的问题；
 
+![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/08/java_atomic-1594179329888.png)
 J.U.C中的原子类包括：
 - 基本数据类型
   - AtomicInteger

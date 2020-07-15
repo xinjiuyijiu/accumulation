@@ -24,4 +24,4 @@ syn等状态位：解决连接状态
 ## 四次挥手
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/15/tcp_four_closed-1594802278575.jpg)
 
-A,B两端处于TCP连接已建立的状态；此时A发送FIN，主动断开连接，进入FIN-WAIT-1状态；B收到断开连接的请求后，回复ACK，进入CLOSED-WAIT状态；A收到B的ACK后，进入FIN-WAIT-2状态；B收到断开请求后，表示也可以断开请求了，向A发送FIN，ACK，进入LAST-ACK状态；A收到B的断开请求后，发送ACK，进入到TIME-WAIT状态；B收到A的ACK后
+A,B两端处于TCP连接已建立的状态；此时A发送FIN，主动断开连接，进入FIN-WAIT-1状态；B收到断开连接的请求后，回复ACK，进入CLOSED-WAIT状态；A收到B的ACK后，进入FIN-WAIT-2状态；B收到断开请求后，表示也可以断开请求了，向A发送FIN，ACK，进入LAST-ACK状态；A收到B的断开请求后，发送ACK，进入到TIME-WAIT状态；B收到A的ACK后，进入CLOSED状态；

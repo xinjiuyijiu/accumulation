@@ -17,6 +17,6 @@ syn等状态位：解决连接状态
 流量控制是接收端支配发送端发送速率；拥塞控制，是发送端感知网络环境后的自我调节发送速率；
 
 ## 三次握手
-
+![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/15/tcp_three_handshake-1594801162383.jpg)
 
 ## 四次挥手

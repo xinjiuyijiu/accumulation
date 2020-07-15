@@ -26,6 +26,6 @@ syn等状态位：解决连接状态
 
 A,B两端处于TCP连接已建立的状态；**第一次挥手**，此时A发送FIN，主动断开连接，进入FIN-WAIT-1状态；**第二次挥手**，B收到断开连接的请求后，回复ACK，进入CLOSED-WAIT状态；A收到B的ACK后，进入FIN-WAIT-2状态；**第三次挥手**，B收到断开请求后，表示也可以断开请求了，向A发送FIN，ACK，进入LAST-ACK状态；**第四次挥手**，A收到B的断开请求后，发送ACK，进入到TIME-WAIT状态，在TIME-WAIT时间后，会自动关闭A；B收到A的ACK后，进入CLOSED状态；
 
-如果A在FIN-WAIT状态时，B因为
+如果A在FIN-WAIT状态时，B因为某些原因已经断开，那么A无法继续更新状态
 
 

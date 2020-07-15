@@ -24,4 +24,4 @@ syn等状态位：解决连接状态
 ## 四次挥手
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/15/tcp_four_closed-1594802278575.jpg)
 
-
+A,B两端处于TCP连接已建立的状态；此时A发送FIN

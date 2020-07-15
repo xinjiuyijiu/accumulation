@@ -19,6 +19,6 @@ syn等状态位：解决连接状态
 ## 三次握手
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/15/tcp_three_handshake-1594801162383.jpg)
 
-发送端和接收端都处于CLOSED状态；接收端开启
+发送端和接收端都处于CLOSED状态；接收端开启端口监听，处于LISTEN状态；发送端发起连接请求，
 
 ## 四次挥手

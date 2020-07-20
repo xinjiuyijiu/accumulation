@@ -3,7 +3,9 @@
 
 cr：carriage return 回车
 lf：line feed 换行
-sp：space 空格 
+sp：space 空格
+
+ 
 
 
 # HTTP1.1

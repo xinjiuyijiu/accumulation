@@ -23,10 +23,12 @@ sp：space 空格
      - 缓存
 - 正文：
 
-## HTTP
+## HTTP响应的格式
+![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/20/http_response-1595224121809.jpg)
 
 
-# HTTP1.1
+
+# HTTP/1.1
 
 # HTTP2.0
 

@@ -1,6 +1,9 @@
 # HTTP的请求
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/20/http_request-1595211663915.jpg)
 
+cr：carriage return 
+
+
 # HTTP1.1
 
 # HTTP2.0

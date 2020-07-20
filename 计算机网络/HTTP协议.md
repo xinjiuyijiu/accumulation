@@ -26,11 +26,11 @@ sp：space 空格
 ## HTTP响应的格式
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/20/http_response-1595224121809.jpg)
 
-|状态行||
+|**状态行**||
 |-|-|
-|首部||
+|**首部**||
 |**(回车换行)** |-|
-|||
+|**实体**|正文|
 
 
 # HTTP/1.1

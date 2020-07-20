@@ -9,15 +9,11 @@ sp：space 空格
 
 |**请求行：**| *方法*（空格）*URL*（空格）*HTTP版本*（回车换行）|
 |-|-|-|
-|首部| key1（空格）value1（回车换行）|
+|**首部**| key1（空格）value1（回车换行）|
 |-|  key2（空格）value2（回车换行）|
-|-|...更多的header...|
-
-
-
-
-(回车换行) 
-request body
+|更多的header|......|
+|(回车换行) |
+|**request body**||
 
 
 # HTTP1.1

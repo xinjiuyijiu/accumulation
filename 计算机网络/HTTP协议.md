@@ -42,6 +42,9 @@ sp：space 空格
   
 - 状态码描述
 - 首部字段
+  - Content-Type
+  - Content-Length
+  - 
 
 # HTTP/1.1
 

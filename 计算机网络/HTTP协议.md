@@ -26,16 +26,18 @@ sp：space 空格
 ## HTTP响应的格式
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/20/http_response-1595224121809.jpg)
 
+|||
+|-|-|
 
 
 # HTTP/1.1
 
-# HTTP2.0
+# HTTP/2.0
 
 
 
 
-# HTTP3.0
+# HTTP/3.0
 QUIC（quick udp internet connection）
 
 

@@ -34,13 +34,13 @@ sp：space 空格
 |**实体**|正文|
 
 - 状态码
-  - 1XX
-  - 2XX
-  - 3XX
+  - 1XX：
+  - 2XX：成功
+  - 3XX：重定向
   - 4XX：客户端错误
-  - 5XX
+  - 5XX：服务器错误
   
-- 状态码描述
+- 状态码描述：
 - 首部字段
   - Content-Type
   - Content-Length

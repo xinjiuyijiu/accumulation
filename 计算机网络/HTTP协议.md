@@ -10,4 +10,4 @@
 QUIC（quick udp internet connection）
 
 
-HTTP1.0和HTTP2.0是基于TCP协议，HTTP3.0基于UDP协议
+HTTP1.0和HTTP2.0是基于TCP协议，HTTP3.0基于UDP协议；

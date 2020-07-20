@@ -43,7 +43,7 @@ sp：space 空格
 - 状态码描述：状态码的原因短语
 - 首部字段
   - Content-Type
-  - Content-Length
+  - Content-Length：响应实体
   - 
 
 # HTTP/1.1

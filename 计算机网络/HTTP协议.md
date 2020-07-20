@@ -16,7 +16,8 @@ sp：space 空格
 |**request body**|正文|
 
 - 八种请求方法：GET，POST，PUT，PATCH，DELETE，TRACE，OPTIONS，CONNECT
-
+- URL统一资源定位符：
+- 
 
 # HTTP1.1
 

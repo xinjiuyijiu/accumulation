@@ -20,6 +20,8 @@ sp：space 空格
 - 首部字段：
      - ACCEPT-TYPE：客户端可以接收的
      - CONTENT-TYPE：正文的格式
+     - 缓存
+- 正文：
 
 # HTTP1.1
 

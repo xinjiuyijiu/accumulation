@@ -60,3 +60,5 @@ QUIC（quick udp internet connection）
 HTTP1.1和HTTP2.0是基于TCP协议，HTTP3.0基于UDP协议；
 
 # HTTPs
+非对称加密
+数字证书

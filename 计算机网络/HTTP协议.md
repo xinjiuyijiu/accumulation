@@ -19,7 +19,7 @@ sp：space 空格
 - URL统一资源定位符：
 - 首部字段：
      - ACCEPT-TYPE
-     - CONTENT-TYPE
+     - CONTENT-TYPE：正文
 
 # HTTP1.1
 

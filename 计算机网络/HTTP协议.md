@@ -8,7 +8,9 @@ sp：space 空格
 HTTP请求的格式：
 方法（空格）URL（空格）HTTP版本（回车换行）
 key1（空格）value1（回车换行）
-key 
+key2（空格）value2（回车换行）
+.....
+(回车换行) 
 
 
 # HTTP1.1

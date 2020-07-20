@@ -3,7 +3,7 @@
 
 cr：carriage return 回车
 lf：line feed 换行
-sp：
+sp：separation 
 
 
 # HTTP1.1

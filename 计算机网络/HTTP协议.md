@@ -42,9 +42,9 @@ sp：space 空格
   
 - 状态码描述：状态码的原因短语
 - 首部字段
-  - Content-Type
-  - Content-Length：响应实体
-  - 
+  - Content-Type：响应实体的类型
+  - Content-Length：响应实体的字节长度
+  
 
 # HTTP/1.1
 

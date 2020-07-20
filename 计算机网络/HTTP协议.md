@@ -18,8 +18,8 @@ sp：space 空格
 - 八种请求方法：GET，POST，PUT，PATCH，DELETE，TRACE，OPTIONS，CONNECT
 - URL统一资源定位符：
 - 首部字段：
-     - ACCEPT-TYPE
-     - CONTENT-TYPE：正文
+     - ACCEPT-TYPE：客户端可以接收的
+     - CONTENT-TYPE：正文的格式
 
 # HTTP1.1
 

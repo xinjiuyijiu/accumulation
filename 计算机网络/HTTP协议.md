@@ -15,7 +15,7 @@ sp：space 空格
 |**(回车换行)** |-|
 |**request body**|正文|
 
-- 八种请求方法
+- 八种请求方法：GET，POST，PUT，PATCH，DELETE，
 
 
 # HTTP1.1

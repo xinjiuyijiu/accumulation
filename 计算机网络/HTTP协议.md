@@ -1,4 +1,4 @@
-# Http1.0
+# HTTP1.0
 
 
 # HTTP2.0
@@ -10,4 +10,4 @@
 QUIC（quick udp internet connection）
 
 
-Http1.0和Http2.0是基于TCP协议的
+HTTP1.0和HTTP2.0是基于TCP协议的超文本传输协议，HTTP3.0是基于

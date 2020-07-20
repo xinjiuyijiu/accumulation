@@ -37,7 +37,7 @@ sp：space 空格
   - 1XX
   - 2XX
   - 3XX
-  - 4XX
+  - 4XX：客户端错误
   - 5XX
   
 - 状态码描述

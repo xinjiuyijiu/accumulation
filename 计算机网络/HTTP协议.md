@@ -5,6 +5,8 @@ cr：carriage return 回车
 lf：line feed 换行
 sp：space 空格
 
+HTTP请求的格式：
+方法（空格）URL（空格）HTTP版本（回车换行）
  
 
 

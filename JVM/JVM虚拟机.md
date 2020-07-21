@@ -24,3 +24,4 @@ HotSpot同时使用了这两种方式，先解释执行，遇到反复执行的�
 
 ***Smalltalk 语言，一切皆对象，那么Java中为什么还有8个基本类型？***
 
+Java包含基本数据类型（primitive Type）

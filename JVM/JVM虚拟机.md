@@ -2,6 +2,7 @@
 
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/21/jvm_memory-1595301442533.png)
 
+
 Java class文件如何被JVM执行？
 HotSpot包含两种方式将字节码翻译成可执行的机器码：
 - 解释执行，逐条将机器码翻译并执行
@@ -16,3 +17,5 @@ HotSpot同时使用了这两种方式，先解释执行，遇到反复执行的�
     序性能更高效；
     预先将class文件编译成机器码后再执行，会使得程序丢失ClassLoader动态类加载，以及JIT即
     时编译带来的代码动态优化作用...
+
+

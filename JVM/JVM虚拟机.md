@@ -3,9 +3,12 @@
 ![title](https://raw.githubusercontent.com/xinjiuyijiu/NoteImages/master/gitnote/2020/07/21/jvm_memory-1595301442533.png)
 
 - 方法区
+
 - 堆
+
 - PC寄存器，又称程序计数器，记录了线程执行字节码的位置
-   native
+   native方法时，程序计数器的值是undefined，那么如何
+
 - Java虚拟机栈
 - 本地方法栈
 

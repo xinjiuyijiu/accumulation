@@ -18,3 +18,5 @@ TweenAnimation并未改变view的属性，只是更改了绘制位置。
 1. 手动添加get/set方法。
 2. 用一个新的类包装它，从而添加get/set方法。
 3. 使用ValueAnimator监听动画的改变，自己实现属性的变化过程。
+
+State

@@ -1,6 +1,6 @@
 
 - FrameAnimation：一系列的图片顺序播放产生的动画效果，图片过多是可能造成OOM。
-- TweenAnimation：对场景的view进行图像变化（平移，缩放，透明度，旋转）。
+- TweenAnimation （ViewAnimation）：对场景的view进行图像变化（平移，缩放，透明度，旋转）。
 - AttributeAnimation：动态改变对象属性产生的动画属性。
 
 TweenAnimation并未改变view的属性，只是更改了绘制位置。

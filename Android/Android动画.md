@@ -20,7 +20,7 @@ TweenAnimation并未改变view的属性，只是更改了绘制位置。
 3. 使用ValueAnimator监听动画的改变，自己实现属性的变化过程。
 
 StateListAnimator 视图状态动画
-RevealAnimator 揭露动画：实现转场动画
+RevealAnimator 揭露动画：实现转场动画，或者某个view的扩展显示和隐藏
 MotionLayout 关键帧动画：实现过渡动画
 RippleEffect 水波纹动画
 

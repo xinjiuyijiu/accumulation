@@ -7,4 +7,4 @@ onMeasure
          */
 
 onLayout
-   child.layout设置位置
+   child.layout设置child位置，可以考虑margin和padding

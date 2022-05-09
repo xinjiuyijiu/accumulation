@@ -5,7 +5,7 @@
 
 TweenAnimation并未改变view的属性，只是更改了绘制位置。
 
-对于属性动画：ValueAnimator（子类ObjectAnimator），TypeEvaluator（决定了运动轨迹），TimeInterpolator（决定了行进速率），ObjectAnimator通过不断的控制属性值的变化，并不断的自动赋值给属性，每次赋值后都会调用invalidate/postInvalidate方法刷新视图。
+对于属性动画：ValueAnimator（子类ObjectAnimator），TypeEvaluator（决定了运动轨迹），TimeInterpolator（决定了行进速率），ObjectAnimator通过不断的控制属性值的变化，并不断的自动赋值给属性，每次赋值后都会调用invalidate/postInvalidate方法刷新视图，通过反射获取到属性的set，get方法，从而通过动画控制view的属性值；
 
 **ObjectAnimator的使用：**
 

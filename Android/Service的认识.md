@@ -24,6 +24,7 @@ Service是运行在进程的主线程当中的，和Activity一样，所以耗�
 前台服务，优先级更高，存活时间和几率更高，且会在通知栏下拉框中显示通知，比如音乐播放器一般使用了该方式。只需在onStartCommand时，调用startForeground（true），并设置对应通知栏即可，然后在onDestroy中使用startForegroud（false）关闭它。
 
 ***++Q.如果服务存在启动和绑定两种方式，那么分别调用stopService和unBindService对他们有啥影响？++***
+如果两种方式stopService才会真正的销毁Service，
 
 Service的隐式启动：Android5.0以上，不同应用之间服务需要通过隐式启动，同一个应用则两种都可以；
 

@@ -20,7 +20,7 @@ Service运行在后台，没有用户界面的；
 - 对于一个服务同时存在startService和bindService两种方式，**startService的优先级高于bindService（或者说影响力更强大）**：
 比如：服务先通过bindService绑定，然后通过startService启动，此时服务会变成startService启动的状态，即使bindService的客户端解绑，也对他没有影响。同理，服务先通过startService启动在通过bindService绑定，仍然时startService状态。
 
-onStartCommand被多次调用，如果Service被异常kill，不会调用Ondestroy
+onStartCommand被多次调用，如果Service被异常kill，不会调用onDestroy，所以有些资源不会被释放，需要注意重复创建资源导致的问题；
 
 Service是运行在进程的主线程当中的，和Activity一样，所以耗时操作需要另外开辟子线程处理。
 前台服务，优先级更高，存活时间和几率更高，且会在通知栏下拉框中显示通知，比如音乐播放器一般使用了该方式。只需在onStartCommand时，调用startForeground（true），并设置对应通知栏即可，然后在onDestroy中使用startForegroud（false）关闭它。

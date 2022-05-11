@@ -1,5 +1,9 @@
 ListView和GridView RecycleBin： 
-mScapView  mActiveView
+两级的缓存：
+- mActiveView
+- mScapView  
+
+
 初始化加载和滑动加载缓存逻辑
 
 

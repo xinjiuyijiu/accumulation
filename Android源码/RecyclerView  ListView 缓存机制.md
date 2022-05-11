@@ -1,7 +1,7 @@
 ListView和GridView RecycleBin： 
 两级的缓存：
 - mActiveView
-- mScapView  
+- mScrapViews（废弃的View，从mActiveView移除的）
 
 
 初始化加载和滑动加载缓存逻辑

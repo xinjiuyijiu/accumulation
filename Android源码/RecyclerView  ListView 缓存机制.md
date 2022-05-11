@@ -7,4 +7,5 @@ RecyclerView回收机制：
 - 自定义缓存池（ViewCacheExtension）
 - 缓存池（RecycleViewPool）多个RecyclerView可以复用该缓存池，如果该级缓存取出后，会调用Adapter的onBindViewHolder
 
+
 RecyclerView局部刷新

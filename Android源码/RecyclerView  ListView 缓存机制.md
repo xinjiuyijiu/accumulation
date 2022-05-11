@@ -18,8 +18,10 @@ RecyclerView回收机制：
 ListView的缓存机制更为简单，在低数据量的情况下，更加简单高效；
 RV缓存的View+ViewHolder，ListView缓存的View需要自己实现ViewHolder的逻辑；
 Rv的离屏缓存不需要重新onBindViewHolder，而ListView需要此操作，更加消耗资源；
-
 RV的缓存是对ListView缓存的补充和优化；
+
+ListView：简单的列表，使用简单
+RecyclerView： 复杂的列表，需要频繁更新，局部刷新
 
 
 ++RecyclerView局部刷新++

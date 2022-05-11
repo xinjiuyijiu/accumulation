@@ -21,7 +21,7 @@ Rv的离屏缓存不需要重新onBindViewHolder，而ListView需要此操作，
 RV的缓存是对ListView缓存的补充和优化；
 
 ListView：简单的列表，使用简单
-RecyclerView： 复杂的列表，需要频繁更新，局部刷新
+RecyclerView： 复杂的列表，需要频繁更新，局部刷新，item加载动画
 
 
 ++RecyclerView局部刷新++

@@ -19,3 +19,5 @@ RecyclerView局部刷新
 
 ListView的缓存机制更为简单，在低数据量的情况下，更加简单高效
 RV缓存的View+ViewHolder，ListView缓存的View需要自己实现ViewHolder的逻辑
+RV的缓存是对ListView缓存的
+

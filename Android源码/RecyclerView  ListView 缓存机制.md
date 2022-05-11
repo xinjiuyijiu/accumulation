@@ -16,3 +16,5 @@ RecyclerView回收机制：
 
 
 RecyclerView局部刷新
+
+ListView的缓存机制更为简单，在低数据量的情况下，更加简单高效

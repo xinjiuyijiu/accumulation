@@ -5,7 +5,7 @@ RecyclerView回收机制：
 - 屏幕内缓存（mAttachedScrap）
 - 屏幕外缓存（mCachedViews）
 - 自定义缓存池（ViewCacheExtension）
-- 缓存池（RecycleViewPool）
+- 缓存池（RecycleViewPool）多个RecyclerView可以复用该缓存池
 
 
 RecyclerView局部刷新

@@ -7,7 +7,7 @@ AsyncTask 异步任务
 
 缺陷：
 生命周期为绑定，导致内存泄露
-cancel不一定成功，导致内存泄露- doInBackground可能无法被
+cancel不一定成功，导致内存泄露- doInBackground可能无法被中断，导致无法cancel
 
 
 Android异步工具：

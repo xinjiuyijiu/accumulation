@@ -13,4 +13,4 @@ cancel不一定成功，导致内存泄露- doInBackground可能无法被中断�
 Android异步工具：
 Thread+Handler ：实现复杂
 AsyncTask：可能的内存泄露
-Loaders
+Loader

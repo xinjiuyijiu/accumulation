@@ -19,7 +19,7 @@ GC Roots包括但不限于一下几种,大概是一种指向堆内的堆外引�
 对象只要被引用可达，且内存足够，则不会被GC回收
 - 弱引用
 对象如果只是弱可达（仅被弱引用持有），则会被GC回收
-Handler处理内存泄露，LifeCycle生命周期持有Activity，Fragment组件对象
+Handler处理内存泄露；LifeCycle生命周期持有Activity，Fragment组件对象；LeakCanary内存
 - 虚引用
 
 

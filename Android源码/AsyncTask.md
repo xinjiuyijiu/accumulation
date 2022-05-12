@@ -6,3 +6,4 @@ AsyncTask 异步任务
 - SERIAL_EXECUTOR
 
 缺陷：
+生命周期为绑定，导致内存泄露

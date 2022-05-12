@@ -4,3 +4,5 @@ AsyncTask 异步任务
 两个executor：
 - THREAD_POOL_EXECUTOR
 - SERIAL_EXECUTOR
+
+缺陷：

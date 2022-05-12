@@ -1,2 +1,2 @@
 AsyncTask 异步任务
-内部创建一个ThreadPoolExecutor线程池
+内部创建一个ThreadPoolExecutor线程池，对Thread和Handler的封装

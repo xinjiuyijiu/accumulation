@@ -8,3 +8,7 @@ AsyncTask 异步任务
 缺陷：
 生命周期为绑定，导致内存泄露
 cancel不一定成功，导致内存泄露
+
+Android异步工具：
+Thread+Handler ：实现
+AsyncTask

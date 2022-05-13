@@ -14,3 +14,6 @@ Flutter的各种动画
 
 
 Flutter和Native的通信方式：
+BasicMessageChannel
+MethodChannel
+EventChannel

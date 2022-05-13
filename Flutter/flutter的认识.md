@@ -7,14 +7,15 @@
 StatelessWidget
 StatefulWidget
 InheritedWidget 状态管理
-GetX如何进行的状态管理
+
 Flutter的Route
 Flutter如何和Native通信
 Flutter的各种动画
 
+GetX如何进行的状态管理：
 - GetBuilder
 手动更新   
-GetXController关联到GetBuilder，GetBuilder中添加listener，在GetXController中手动调用update方法，触发GetBuilder的更新，
+GetXController关联到GetBuilder，GetBuilder中添加listener，在GetXController中手动调用update方法，触发GetBuilder的更新，实际调用它的setState方法；
 - Obx
 响应式的状态管理，自动更新  .obs RxXX之类的响应式变量
 

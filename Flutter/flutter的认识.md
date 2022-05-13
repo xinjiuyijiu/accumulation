@@ -16,5 +16,6 @@ Flutter的各种动画
 Flutter和Native的通信方式：
 - BasicMessageChannel
 - MethodChannel
+方法调用，可以相互调用对方的方法
 - EventChannel
-Native向Flutter发送消息，比如一些系统的变化，如传感器，
+Native向Flutter发送消息，比如一些系统的变化，如传感器，网络状态。。。

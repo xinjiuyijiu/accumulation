@@ -13,8 +13,10 @@ Flutter如何和Native通信
 Flutter的各种动画
 
 - GetBuilder
+手动更新   
+
 - Obx
-响应式的状态管理  .obs RxXX之类的响应式变量
+响应式的状态管理，自动更新  .obs RxXX之类的响应式变量
 
 
 Flutter和Native的通信方式：

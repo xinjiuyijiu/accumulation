@@ -20,3 +20,6 @@ Flutter和Native的通信方式：
 方法调用，双向通信，可以相互调用对方的方法
 - EventChannel
 Native向Flutter发送消息，比如一些系统的变化，如传感器，网络状态。。。
+
+Flutter Plugin：
+自动注册FLutterPlugin： GeneratedPluginRegistrant在Android，Ios等平台注册插件

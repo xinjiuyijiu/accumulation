@@ -14,7 +14,7 @@ Flutter的各种动画
 
 - GetBuilder
 手动更新   
-
+GetXController关联到GetBuilder，GetBuilder中添加listener，在GetXController中手动调用update方法，触发
 - Obx
 响应式的状态管理，自动更新  .obs RxXX之类的响应式变量
 

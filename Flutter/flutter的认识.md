@@ -12,6 +12,10 @@ Flutter的Route
 Flutter如何和Native通信
 Flutter的各种动画
 
+- GetBuilder
+- Obx
+响应式的
+
 
 Flutter和Native的通信方式：
 - BasicMessageChannel
@@ -29,5 +33,3 @@ UniApp Weex Plugin:
 - WXComponent
 AppHookProxy拦截Application
 
-- GetBuilder
-- Obx

@@ -27,3 +27,4 @@ Flutter Plugin：
 UniApp Weex Plugin:
 WXModule
 WXComponent
+AppHookProxy

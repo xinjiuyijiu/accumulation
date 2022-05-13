@@ -25,6 +25,6 @@ Flutter Plugin：
 自动注册FLutterPlugin： GeneratedPluginRegistrant在Android，Ios等平台注册插件
 
 UniApp Weex Plugin:
-WXModule
-WXComponent
-AppHookProxy注册插件
+- WXModule
+- WXComponent
+AppHookProxy拦截Application

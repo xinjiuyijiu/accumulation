@@ -28,3 +28,6 @@ UniApp Weex Plugin:
 - WXModule
 - WXComponent
 AppHookProxy拦截Application
+
+- GetBuilder
+- Obx

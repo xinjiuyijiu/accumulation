@@ -17,3 +17,4 @@ Flutter和Native的通信方式：
 - BasicMessageChannel
 - MethodChannel
 - EventChannel
+Native向Flutter发送消息，比如一些系统的变化，如传感器，

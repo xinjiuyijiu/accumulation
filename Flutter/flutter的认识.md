@@ -6,6 +6,10 @@
 生命周期
 StatelessWidget
 StatefulWidget
+initState
+build
+
+
 InheritedWidget 状态管理
 
 Flutter的Route：

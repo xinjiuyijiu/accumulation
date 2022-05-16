@@ -6,9 +6,10 @@
 生命周期
 StatelessWidget
 StatefulWidget
-onAttache
-initState
-build
+- initState
+- build
+- deactivate
+- dispose
 
 
 InheritedWidget 状态管理

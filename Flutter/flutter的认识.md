@@ -8,8 +8,9 @@ StatelessWidget
 StatefulWidget
 InheritedWidget 状态管理
 
-Flutter的Route
-Flutter如何和Native通信
+Flutter的Route：
+
+
 Flutter的各种动画
 
 GetX如何进行的状态管理：

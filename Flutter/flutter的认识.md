@@ -30,6 +30,7 @@ Native向Flutter发送消息，比如一些系统的变化，如传感器，网�
 
 Flutter Plugin：
 自动注册FLutterPlugin： GeneratedPluginRegistrant在Android，Ios等平台注册插件
+GeneratedPluginRegistrant.java在调用flutter dependence get后生成或更新
 
 UniApp Weex Plugin:
 - WXModule

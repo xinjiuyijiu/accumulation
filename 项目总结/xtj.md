@@ -17,6 +17,7 @@
   - 技术选型
     - Java+Kotlin+OKHttp+Rx+WebSocket
   - 车载屏物理设备
+    - 与厂商对接SDK 
   - 开发中遇到的问题
 
 - 技术问题

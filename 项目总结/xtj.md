@@ -22,7 +22,8 @@
 - 技术问题
   - Websocket相关
     - socket重连逻辑
-    - Stomp协议 
+    - Stomp协议
+    - socket http切换 
   - 项目编译
   - 多设备业务兼容
     - 充电
@@ -36,3 +37,4 @@
   - 设备缓存（断电）
   - 设备存储检测
   - 设备shell操作
+  - 

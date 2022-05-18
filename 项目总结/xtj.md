@@ -25,7 +25,10 @@
     - Stomp协议
     - socket http切换 
   - 项目编译
-    - sourceSets
+    - 多sourceSets
+    - iml sdk编译顺序
+    - apk打包
+    - variant 
   - 多设备业务兼容
     - 充电
     - lbs

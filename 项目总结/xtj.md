@@ -38,7 +38,7 @@
     - iml sdk编译顺序
       改变iml文件中sdk的加载顺序，解决编译期间，无法找到某些Class的问题
     - apk打包
-      apk
+      android.applicationVariants自定义打包任务，控制输出文件的名称和位置
     - variant filter配置
     - jar包冲突，class剔除
   - 多设备业务兼容

@@ -21,7 +21,8 @@
 
 - 技术问题
   - Websocket相关
-    - socket重连逻辑 
+    - socket重连逻辑
+    - Stomp协议 
   - 项目编译
   - 多设备业务兼容
     - 充电

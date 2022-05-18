@@ -52,8 +52,10 @@
     - 截图+root权限
       - MediaProjection+AccessibilityService获取virtualDisplay，生成图片
       - screencap shell命令，生成图片
-      - 
+      - 图片绘制水印并上传服务器
     - 策略模式
+      为了兼容不同厂商的设备，使用策略模式统一接口，实现功能，比如：
+      - 
   - 省电，省流量
   - 设备缓存（断电）
   - 设备存储检测

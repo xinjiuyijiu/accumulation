@@ -40,6 +40,7 @@
     - apk打包
       android.applicationVariants自定义打包任务，控制输出文件的名称和位置
     - variant filter配置
+      对于多渠道打包，当存在过多的variant组合时，使用variantFilter过滤一些组合的显示
     - jar包冲突，class剔除
   - 多设备业务兼容
     - 充电

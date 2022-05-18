@@ -30,7 +30,8 @@
        一个建立在websocket之上的文本协议，传输的字符串文本	     
     - socket http切换
        当socket连接遇到问题：socket服务器崩溃后，使用Http的轮询来实现一些实时的功能 
-  - webs
+  - 大量websocket设备同时连接，导致服务器达到峰值，无法及时处理
+    客户端
   - 项目编译
     - 多sourceSets
     - iml sdk编译顺序

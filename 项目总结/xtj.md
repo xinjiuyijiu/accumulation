@@ -15,8 +15,9 @@
 
 - 车载屏端
   - 技术选型
-    - Java+Kotlin+OKHttp+Rx
+    - Java+Kotlin+OKHttp+Rx+WebSocket
   - 车载屏物理设备
   - 开发中遇到的问题
 
--
+- 技术特点
+  - 

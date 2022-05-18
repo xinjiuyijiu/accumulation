@@ -25,7 +25,7 @@
   - Websocket相关
     - socket重连逻辑，心跳逻辑
        如何合理的减少心跳？？
-	
+	重连退避
     - Stomp协议
        一个建立在websocket之上的文本协议，传输的字符串文本	     
     - socket http切换

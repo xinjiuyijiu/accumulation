@@ -36,6 +36,7 @@
     - 多sourceSets
       相同类的不同实现，可以避免某些额外的jar包被打包进apk
     - iml sdk编译顺序
+      相同的sdk在编译
     - apk打包
     - variant filter配置
   - 多设备业务兼容

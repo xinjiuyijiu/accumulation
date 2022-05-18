@@ -41,10 +41,12 @@
       android.applicationVariants自定义打包任务，控制输出文件的名称和位置
     - variant filter配置
       对于多渠道打包，当存在过多的variant组合时，使用variantFilter过滤一些组合的显示
-    - jar包冲突，class剔除
+    - jar包冲突，通过自定义gradle plugin，剔除Class
   - 多设备业务兼容
     - 充电
+      不同厂商设备的充电逻辑不一样
     - lbs
+      
     - 大小屏
     - sdk加载 
     - flavor打包配置

@@ -25,11 +25,12 @@
   - Websocket相关
     - socket重连逻辑，心跳逻辑
        如何合理的减少心跳？？
-	重连退避
+	重连退避：失败3次后，每次失败都增加到下一次的重连时间
     - Stomp协议
        一个建立在websocket之上的文本协议，传输的字符串文本	     
     - socket http切换
        当socket连接遇到问题：socket服务器崩溃后，使用Http的轮询来实现一些实时的功能 
+  - webs
   - 项目编译
     - 多sourceSets
     - iml sdk编译顺序

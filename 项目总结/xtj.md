@@ -24,7 +24,8 @@
   - Websocket相关
     - socket重连逻辑，心跳逻辑
     - Stomp协议
-    - socket http切换 
+    - socket http切换
+       当socket连接遇到问题：socket服务器崩溃，socket 
   - 项目编译
     - 多sourceSets
     - iml sdk编译顺序

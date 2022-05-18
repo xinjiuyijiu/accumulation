@@ -25,6 +25,7 @@
     - Stomp协议
     - socket http切换 
   - 项目编译
+    - sourceSets
   - 多设备业务兼容
     - 充电
     - lbs
@@ -38,3 +39,4 @@
   - 设备存储检测
   - 设备远程控制shell操作
   - 静默升级安装
+  - AIDL进程间通信

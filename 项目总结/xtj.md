@@ -23,8 +23,9 @@
 - 技术问题
   - Websocket相关
     - socket重连逻辑，心跳逻辑
+       心跳
     - Stomp协议
-       一个建立在	     
+       一个建立在websocket之上的文本协议，传输的字符串文本	     
     - socket http切换
        当socket连接遇到问题：socket服务器崩溃后，使用Http的轮询来实现一些实时的功能 
   - 项目编译

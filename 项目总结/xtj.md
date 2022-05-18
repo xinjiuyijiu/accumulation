@@ -21,14 +21,14 @@
 
 - 技术问题
   - Websocket相关
-    - socket重连逻辑
+    - socket重连逻辑，心跳逻辑
     - Stomp协议
     - socket http切换 
   - 项目编译
     - 多sourceSets
     - iml sdk编译顺序
     - apk打包
-    - variant 
+    - variant filter配置
   - 多设备业务兼容
     - 充电
     - lbs

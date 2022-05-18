@@ -39,7 +39,6 @@
     - 截图+root权限
       - MediaProjection+AccessibilityService
       - screencap shell命令
-     
     - 策略模式
   - 省电，省流量
   - 设备缓存（断电）

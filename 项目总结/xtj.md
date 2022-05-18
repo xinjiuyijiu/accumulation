@@ -48,13 +48,11 @@
     - lbs
       原生sdk定位；通过百度sdk，高德SDK定位；经纬度坐标系转换；
     - 大小屏
-      统一接口，实现大小屏的播放器逻辑
-    - sdk加载 
-    - flavor打包配置
-    
+      统一接口，实现大小屏的播放器逻辑    
     - 截图+root权限
-      - MediaProjection+AccessibilityService
-      - screencap shell命令
+      - MediaProjection+AccessibilityService获取virtualDisplay，生成图片
+      - screencap shell命令，生成图片
+      - 
     - 策略模式
   - 省电，省流量
   - 设备缓存（断电）

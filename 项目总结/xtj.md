@@ -36,16 +36,18 @@
     - 多sourceSets
       相同类的不同实现，可以避免某些额外的jar包被打包进apk
     - iml sdk编译顺序
-      改变iml文件中sdk的加载顺序，解决编译期间，无法找到某些
+      改变iml文件中sdk的加载顺序，解决编译期间，无法找到某些Class的问题
     - apk打包
+      apk
     - variant filter配置
+    - jar包冲突，class剔除
   - 多设备业务兼容
     - 充电
     - lbs
     - 大小屏
     - sdk加载 
     - flavor打包配置
-    - jar包冲突，class剔除
+    
     - 截图+root权限
       - MediaProjection+AccessibilityService
       - screencap shell命令

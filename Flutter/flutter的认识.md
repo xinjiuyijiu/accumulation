@@ -45,5 +45,5 @@ UniApp Weex Plugin:
 AppHookProxy拦截Application
 
 Flutter监听前后端切换：
-WidgetBinding
+WidgetBindingObserver
 

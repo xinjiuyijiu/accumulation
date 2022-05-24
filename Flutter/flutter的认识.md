@@ -44,3 +44,6 @@ UniApp Weex Plugin:
 - WXComponent
 AppHookProxy拦截Application
 
+Flutter监听前后端切换：
+WidgetBinding
+

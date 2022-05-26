@@ -17,5 +17,5 @@ onTouchEvent：涉及到嵌套滑动的逻辑
 	            layoutManager的scrollHorizontallyBy以及scrollVerticallyBy方法调用滚动，实际是调用每个child的offsetLeftAndRight，改变位置，形成滑动的效果；
 	     - dispatchNestedScroll：父控件处理剩余的滚动值
 	     - dispatchOnScrolled：滚动listener时间分发
-      - GapWorker预取ViewHolder
+      - GapWorker预取ViewHolder，走的是recycler.tryGetViewHolderForPositionByDeadline获取或创建实际的view
    - ACTION UP

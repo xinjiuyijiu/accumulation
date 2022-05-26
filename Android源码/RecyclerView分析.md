@@ -20,3 +20,4 @@ onTouchEvent：涉及到嵌套滑动的逻辑
       - GapWorker预取ViewHolder，走的是recycler.tryGetViewHolderForPositionByDeadline获取或创建实际的view
    - ACTION UP
    fling滑动的相关处理；stopNestedScroll嵌套滑动结束；
+   - ACTION_POINTER_DOWN

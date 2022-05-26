@@ -7,3 +7,4 @@ dispatchLayoutStep1（layoutinfo），dispatchLayoutStep2（layoutchildren），
 drawItemDecor，drawItem，drawItemDecorOver，drawClipChildPadding
 
 RV的滑动：
+onTouchEvent：涉及到嵌套滑动的逻辑

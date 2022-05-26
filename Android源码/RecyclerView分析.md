@@ -1,1 +1,6 @@
-RV的三部曲：
+RV的三步曲：
+- onMeasure
+AutoMeasure 
+- onLayout
+
+- draw

@@ -1,6 +1,6 @@
 RV的三步曲：
 - onMeasure
-AutoMeasure 
+AutoMeasure ：dispatch
 - onLayout
 
 - draw

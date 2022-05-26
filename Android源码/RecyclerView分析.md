@@ -19,3 +19,4 @@ onTouchEvent：涉及到嵌套滑动的逻辑
 	     - dispatchOnScrolled：滚动listener时间分发
       - GapWorker预取ViewHolder，走的是recycler.tryGetViewHolderForPositionByDeadline获取或创建实际的view
    - ACTION UP
+   fling的相关处理

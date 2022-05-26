@@ -13,7 +13,7 @@ onTouchEvent：涉及到嵌套滑动的逻辑
    - ACTION MOVE
    dispatchNestedPreScroll，父控件是否预先消耗部分值，处理滚动；
    剩下的滑动值scrollByInternal处理rv的滑动：
--    scrollStep()处理rv的实际滑动：
--    dispatchNestedScroll：父控件处理剩余的滚动值
--    dispatchOnScrolled：滚动listener时间分发
+	- -    scrollStep()处理rv的实际滑动：
+	- -    dispatchNestedScroll：父控件处理剩余的滚动值
+	- -    dispatchOnScrolled：滚动listener时间分发
    - ACTION UP

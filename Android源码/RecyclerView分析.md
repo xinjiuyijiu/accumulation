@@ -11,5 +11,6 @@ onTouchEvent：涉及到嵌套滑动的逻辑
    - ACTION DOWN
    startNestedScroll，通知父控件开始滚动；初始化一些滚动初始值；
    - ACTION MOVE
-   dispatchNestedPreScroll，父控件是否预先消耗部分值，处理滚动；剩下的
+   dispatchNestedPreScroll，父控件是否预先消耗部分值，处理滚动；剩下的滑动值scrollByInternal处理rv的滑动：
+
    - ACTION UP

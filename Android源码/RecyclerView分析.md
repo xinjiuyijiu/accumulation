@@ -21,4 +21,4 @@ onTouchEvent：涉及到嵌套滑动的逻辑
    - ACTION UP
    fling滑动的相关处理；stopNestedScroll嵌套滑动结束；
    - ACTION_POINTER_DOWN，ACTION_POINTER_UP
-   多指滑动，指的是一根指头还没有up，另一根指头down了，不是指的是多指头操作；rv相应最近
+   多指滑动，指的是一根指头还没有up，另一根指头down了，不是指的是多指头操作；rv相应最近一根指头的事件；

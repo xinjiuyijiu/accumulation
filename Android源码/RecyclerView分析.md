@@ -8,6 +8,7 @@ drawItemDecor，drawItem，drawItemDecorOver，drawClipChildPadding
 
 RV的滑动：
 onTouchEvent：涉及到嵌套滑动的逻辑
-   - - ACTION DOWN
+   - ACTION DOWN
+   startNestedScroll，通知父控件开始
    - ACTION MOVE
    - ACTION UP

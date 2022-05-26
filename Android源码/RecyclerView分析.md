@@ -15,6 +15,7 @@ onTouchEvent：涉及到嵌套滑动的逻辑
           剩下的滑动值scrollByInternal处理rv的滑动：
 	     - scrollStep()处理rv的实际滑动：
 	            layoutManager的scrollHorizontallyBy以及scrollVerticallyBy方法调用滚动，实际是调用每个child的offsetLeftAndRight，改变位置，形成滑动的效果；
-	     -    dispatchNestedScroll：父控件处理剩余的滚动值
-	     -    dispatchOnScrolled：滚动listener时间分发
+	     - dispatchNestedScroll：父控件处理剩余的滚动值
+	     - dispatchOnScrolled：滚动listener时间分发
+      - GapWorker预取ViewHolder
    - ACTION UP

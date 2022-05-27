@@ -29,4 +29,5 @@ onTouchEvent：涉及到嵌套滑动的逻辑
  - fling的分析
 
 Rv的缓存：
+Rv的动画：
 

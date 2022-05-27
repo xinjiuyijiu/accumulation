@@ -1,3 +1,6 @@
+RV的组成：
+RecyclerView，LayoutManager，Adapter，Recycle，ItemAnimation，ItemDecoration
+
 RV的三步曲：
 - onMeasure
 AutoMeasure ：dispatchLayoutStep1，dispatchLayoutStep2，setMeasuredDimensionFromChildren
@@ -25,4 +28,5 @@ onTouchEvent：涉及到嵌套滑动的逻辑
 
  - fling的分析
 
-Rv的缓存
+Rv的缓存：
+

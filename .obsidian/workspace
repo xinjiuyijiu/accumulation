@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "2c3b5e8fdb1716a7",
+    "type": "split",
+    "children": [
+      {
+        "id": "c69694d049767ea4",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ec32527be6ce6859",
+    "type": "split",
+    "children": [
+      {
+        "id": "a88e96f005c9172d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b96cdcd752bf22c5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "643785b1f2573ff3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "52cb1c22d6db420e",
+    "type": "split",
+    "children": [
+      {
+        "id": "04487b382ef918b6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb031a055acc9a5b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "c69694d049767ea4",
+  "lastOpenFiles": [
+    "算法/递归.md",
+    "Glide源码/jj.md",
+    "Android/Context.md",
+    "Android/Android动画.md",
+    "Android/Android电量优化.md",
+    "Android/四大组件的生命周期.md",
+    "Android源码/Binder机制.md",
+    "Android源码/App的启动过程.md",
+    "Android源码/Apk的安装和卸载过程.md",
+    "Android源码/Activity的启动过程.md"
+  ]
+}

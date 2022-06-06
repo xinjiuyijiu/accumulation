@@ -30,4 +30,4 @@ onTouchEvent：涉及到嵌套滑动的逻辑
 
 Rv的缓存：
 Rv的动画：
-
+Rv和ListView的比较：
